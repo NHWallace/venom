@@ -15,14 +15,17 @@ firebase_config = {
 firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database()
 
+gamesdb = db.child("games")
+
 #add data
 #please use a valid url for each of these, we will be loading these images on the homepage later
 game1data = {
-"name": "tictactoe",
-"iconurl": "https://t3.ftcdn.net/jpg/06/15/41/72/360_F_615417282_RM74va9wUJcqi8vt8vi8gVTxaQAutqr4.jpg",
-"categories": "strategy",
-"rating": "5",
-"uploaderID":"randName"
+    "tictactoe": {
+        "iconurl": "https://t3.ftcdn.net/jpg/06/15/41/72/360_F_615417282_RM74va9wUJcqi8vt8vi8gVTxaQAutqr4.jpg",
+        "categories": "strategy",
+        "rating": "5",
+        "uploaderID":"randName"
+        }
 }
 
-db.child("games").push(game1data)
+gamesdb.update(game1data)
