@@ -1,4 +1,5 @@
 import pyrebase
+import time
 
 # Firebase configuration 
 firebase_config = {
@@ -19,13 +20,46 @@ gamesdb = db.child("games")
 
 #add data
 #please use a valid url for each of these, we will be loading these images on the homepage later
+
+def update_game(data,databaseRef):
+
+    gameName = list(data)[0]
+    innerData = data[gameName]
+    snapshot = databaseRef.get().val()
+    firstUpload = None
+    
+    if snapshot is None or gameName not in snapshot :
+        # uploading this game for the first time
+        firstUpload = True
+    else:
+        # this game already exists in the database
+        firstUpload = False
+        
+    # always update database with provided data
+    databaseRef.child("games").child(gameName).update(innerData)
+    
+    # only initialize metadata for new games
+    
+    if firstUpload is True:
+        
+        currentTime = int(time.time()) # Unix timestamp
+
+        extraData = {
+            "uploadTime": currentTime,
+            "rating": 0,
+            "plays": 0,
+            "favorites": 0
+            }
+        
+        databaseRef.child("games").child(gameName).update(extraData)
+    
 game1data = {
     "tictactoe": {
-        "iconurl": "https://t3.ftcdn.net/jpg/06/15/41/72/360_F_615417282_RM74va9wUJcqi8vt8vi8gVTxaQAutqr4.jpg",
         "categories": "strategy",
-        "rating": "5",
-        "uploaderID":"randName"
+        "uploaderID": "martin",
+        "hasCSS": False,
+        "hasJS": False
         }
 }
 
-gamesdb.update(game1data)
+update_game(game1data,gamesdb)
