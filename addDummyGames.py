@@ -52,7 +52,9 @@ def update_game(data,databaseRef):
             }
         
         databaseRef.child("games").child(gameName).update(extraData)
-    
+
+"""
+Our game data should be formatted as follow:
 game1data = {
     "tictactoe": {
         "categories": "strategy",
@@ -61,5 +63,30 @@ game1data = {
         "hasJS": False
         }
 }
+"""
 
-update_game(game1data,gamesdb)
+# Create 40 fake games to add to our list
+gameData = list()
+for x in range(40):
+    gameName = "Game " + str(x+1)
+    uploaderID = "user" + str(x+1)
+    categories = ""
+    
+    if (((x+1) % 3) == 0):
+        categories = "strategy"
+    elif (((x+1) % 3) == 1):
+        categories = "action"
+    else:
+        categories = "puzzle"
+    
+    gameData.append({
+        gameName: {
+            "categories": categories,
+            "uploaderID": uploaderID,
+            "hasCSS": False,
+            "hasJS": False            
+        }
+    })
+    
+for game in gameData:
+    update_game(game,gamesdb)
