@@ -25,16 +25,57 @@ storage = firebase.storage() # reference to our storage
 views = Blueprint('views', __name__)
 
 
-@views.route('/')
+@views.route('/', methods = ['POST','GET'])
 def home():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery is "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+            
     return render_template("home.html")
 
-@views.route('/about-us')
+
+@views.route('/about-us', methods = ['POST','GET'])
 def aboutus():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery is "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+    
     return render_template("aboutus.html")
 
+
 @views.route('/search/<query>', methods = ['POST','GET'])
-def search(query):
+def search(query=""):
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery is "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+    
     # Gets all text after /search/ and saves it in the string "query".
     
     gameDBSnapshot = db.child("games").get().val()
