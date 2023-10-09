@@ -59,6 +59,7 @@ game1data = {
     "tictactoe": {
         "categories": "strategy",
         "uploaderID": "martin",
+        "description": "some description should go here"
         "hasCSS": False,
         "hasJS": False
         }
@@ -79,10 +80,12 @@ for x in range(40):
     else:
         categories = "puzzle"
     
+    description = "This is a " + categories + " game uploaded by " + uploaderID + "."
     gameData.append({
         gameName: {
             "categories": categories,
             "uploaderID": uploaderID,
+            "description": description,
             "hasCSS": False,
             "hasJS": False            
         }
