@@ -24,6 +24,7 @@
             <li> <a href="./Account.html">Account</a></li>
             <li> <a href="./Games.html">Games</a></li>
             <li> <a href="./aboutus.html">About us</a></li>
+            <li> <input type = "text" placeholder="Find a game.."</li>
            </ul>
            <div class="login_signup">
             <ul>
@@ -33,11 +34,22 @@
         </div>
         </div>
     </header>
-    <ul>
+    <div>
+        <p>{{ test }}</p>
+    </div>
+    {% if gameList%}
+    <div class = "gameContainer">
         {% for game in gameList %}
-        <li>
-            {{ game }}
-        </li>
+        <div class = "gameItem">
+           <img id="gameImage" src="{{ gameList[game]["imageURL"] }}" alt="{{ game }} image" onerror="this.src = '{{ backupImage }}'">
+           <a id="gameName" href="../games/{{ game }}">{{ game }}</a>
+           <p id="gameDesc">: {{ gameList[game]["description"] }}</p>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+    {% else %}
+    <p id="errorEmptyResults">
+        Oh no! Your search returned no results.
+    </p>
+    {% endif %}
 </body>

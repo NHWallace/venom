@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect
 
 import pyrebase
 import time
+import requests
 
 # Firebase configuration 
 firebase_config = {
@@ -16,7 +17,9 @@ firebase_config = {
 }
 
 firebase = pyrebase.initialize_app(firebase_config)
-db = firebase.database()
+db = firebase.database() # reference to our database
+
+storage = firebase.storage() # reference to our storage
 
 # allows routes to be called in other files
 views = Blueprint('views', __name__)
@@ -32,10 +35,28 @@ def aboutus():
 
 @views.route('/search/<query>', methods = ['POST','GET'])
 def search(query):
+    # Gets all text after /search/ and saves it in the string "query".
     
-    gamesSnapshot = db.child("games").get().val()
-    searchedList = gamesSnapshot
-    # gameNames=list(gamesSnapshot.keys())
+    gameDBSnapshot = db.child("games").get().val()
+    searchedList = dict()
     
+    for game in gameDBSnapshot:
+        """
+        For every game, if the search query is in that the title, add
+        that game to the list of games to display to the user.
+        """
+        imageURLS = list()
+        if query.lower() in game.lower():
+            searchedList[game]=gameDBSnapshot[game]
+            
+            gameImagePath = "games/" + game + "/" + game + ".png"
+            
+            # requires None as a token for pyrebase - known issue since 2017
+            imageURL = storage.child(gameImagePath).get_url(None)
+            
+            searchedList[game]["imageURL"] = imageURL
     
-    return render_template("searchResults.html", gameList = searchedList)
+    # Supply a backup image for games with no image
+    backupImage = storage.child("games/defaultGameImage.png").get_url(None)
+    
+    return render_template("searchResults.html", gameList = searchedList, backupImage = backupImage)
