@@ -1,1 +1,185 @@
-<p>Login page coming soon!</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Use a relative path for the stylesheet -->
+    <link rel="stylesheet" href="Home.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- Corrected the title tag -->
+    <title>Glowing Inputs Login Form UI</title>    
+
+    <style>
+    body {
+        /* Background image */
+        margin: 0;
+        background-image: url('3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* Navigation Bar */
+    .topnav {
+        font-family: 'Aldhabi', serif;
+        font-weight: bold;
+        font-size: 50px;
+        overflow: hidden;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        /* make navigation top left */
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        font-size: 18px;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .logo {
+        max-height: 150%;
+        margin-left: 10px;
+    }
+
+    /* Navigation Bar Mouse hovers when hovering over */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #00bbff;
+        color: white;
+    }
+
+    nav {
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        height: 60px;
+    }
+
+    /* Title */
+    .hero {
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        color: #000000;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 
+        0 0 15px #00bbffd0, 0 0 20px #00bbffd0, 
+        0 0 25px #00bbffd0, 0 0 30px #00bbffd0, 0 0 35px #0073e6;
+        margin-bottom: 40px; /* Adjusted margin */
+    }
+
+    .hero p {
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .endgame2 {
+        margin-bottom: 100px;
+    }
+
+    /* Login Form styling */
+    .login-form {
+        text-align: center;
+        margin-top: 150px; /* Adjusted margin for spacing */
+    }
+
+    .field {
+        margin-bottom: 20px;
+    }
+
+    .field input {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .field label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .link {
+        margin-top: 20px;
+    }
+
+    </style>
+</head>
+
+<body>
+<div class="topnav">
+     <!-- Use relative paths for links -->
+    <img class="logo" src="m.png" alt="logo"/>
+    <a href="/Users/bonillamarissa/Documents/P.V/Home.html">Home</a>
+    <a class="active" href="/Users/bonillamarissa/Documents/P.V/Login.html">Login</a>
+    <a href="/Users/bonillamarissa/Documents/P.V/SignUp.html">Sign Up</a>
+    <a href="/Users/bonillamarissa/Documents/P.V/Games.html">Games</a>
+</div>
+
+<!-- Login Form -->
+<div class="login-form">
+    <div class="hero">
+        <h1>Login</h1>
+    </div>
+
+    <form>
+       <div class="field">
+          <input 
+          type="text" 
+          name="loginUser"
+          placeholder="Email or Phone" 
+          id="email">
+          <label for="loginUser"></label>
+       </div>
+       <div class="field">
+          <input 
+          type="password" 
+          name="loginPassword"
+          placeholder="Password"
+          id="password" required >
+          <label for="loginPassword"></label>
+       </div>
+       <button type="button" onclick="auth()">Sign In</button>
+       <div class="link">
+          Not a Member?
+          <a href="">Signup Now</a>
+       </div>
+    </form>
+</div>
+
+<div class="endgame2"></div>
+
+<!-- Authorization to enter the Account Page -->
+<script>
+function auth() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value; 
+
+    /* Access to Account */
+    if (email === "user@gmail.com" && password === "user123") { // Use strict equality (===)
+        window.location.href = "/Users/bonillamarissa/Documents/P.V/Account.html"; // Use a pathway to the account page
+        alert("Logged in Successfully");
+    } else {
+        alert("Invalid Information");
+        return;
+    }
+}
+</script>
+
+</body>
+</html>
