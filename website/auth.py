@@ -54,4 +54,4 @@ def sign_up():
                 redirectURL = "/search/" + searchQuery
                 return redirect(redirectURL)
                 
-    return render_template('sign_up.html')
+    return render_template('SignUp.html')

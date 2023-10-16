@@ -101,3 +101,37 @@ def search(query=""):
     backupImage = storage.child("games/defaultGameImage.png").get_url(None)
     
     return render_template("searchResults.html", gameList = searchedList, backupImage = backupImage)
+
+@views.route('/account', methods = ['POST','GET'])
+def account():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery is "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+            
+    return render_template("Account.html")
+
+@views.route('/games', methods = ['POST','GET'])
+def games():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery is "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+            
+    return render_template("Games.html")
