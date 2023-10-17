@@ -30,17 +30,34 @@ def home():
     
     if request.method == "POST":
         if request.form.get("searchQuery"):
-        # Submitted form is a search form
+        # submitted form is a search form
             searchQuery = request.form.get("searchQuery")
             
             if searchQuery is "":
-                # User entered a blank form, return them to current page
+                # user entered a blank form, return them to current page
                 return redirect(request.path)
             else:
                 redirectURL = "/search/" + searchQuery
                 return redirect(redirectURL)
             
-    return render_template("home.html")
+    """
+    get the 6 most played games in our database
+    ordered queries require indexed database sections, more info at
+    https://stackoverflow.com/questions/34968413/error-index-not-defined-add-indexon
+    """
+    mostPlayedList = db.child("games").order_by_child("plays").limit_to_first(6).get().val()
+    
+    for game in mostPlayedList:
+        # fetch the game image for every game we want to display
+        gameImagePath = "games/" + game + "/" + game + ".png"
+        # requires None as a token for pyrebase - known issue since 2017
+        imageURL = storage.child(gameImagePath).get_url(None)
+        mostPlayedList[game]["imageURL"] = imageURL
+
+    # supply a backup image for games with no image
+    backupImage = storage.child("games/defaultGameImage.png").get_url(None)
+    
+    return render_template("home.html", gameList = mostPlayedList, backupImage = backupImage)
 
 
 @views.route('/about-us', methods = ['POST','GET'])
@@ -75,7 +92,7 @@ def search(query=""):
             else:
                 redirectURL = "/search/" + searchQuery
                 return redirect(redirectURL)
-    
+
     # Gets all text after /search/ and saves it in the string "query".
     
     gameDBSnapshot = db.child("games").get().val()
