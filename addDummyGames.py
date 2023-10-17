@@ -43,28 +43,29 @@ def update_game(data,databaseRef):
     if firstUpload is True:
         
         currentTime = int(time.time()) # Unix timestamp
-
+    
         extraData = {
             "uploadTime": currentTime,
             "rating": 0,
+            "totalRatings": [0, 0, 0, 0, 0], #1, 2, ...5 star ratings
             "plays": 0,
             "favorites": 0
             }
         
         databaseRef.child("games").child(gameName).update(extraData)
 
-"""
-Our game data should be formatted as follow:
-game1data = {
+
+#Our game data should be formatted as follow:
+tictactoe = {
     "tictactoe": {
         "categories": "strategy",
         "uploaderID": "martin",
-        "description": "some description should go here"
+        "description": "The classic 3 in a row to win game!",
         "hasCSS": False,
         "hasJS": False
         }
 }
-"""
+
 
 # Create 40 fake games to add to our list
 gameData = list()
@@ -90,6 +91,8 @@ for x in range(40):
             "hasJS": False            
         }
     })
-    
+"""# Leave these commented when not pushing new data, we have limited updates a day!    
 for game in gameData:
     update_game(game,gamesdb)
+update_game(tictactoe, gamesdb)
+"""
