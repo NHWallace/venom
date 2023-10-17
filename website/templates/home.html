@@ -247,12 +247,20 @@
                 </td2>
             </tr>
         </table2>
+    {% if gameList%}
+    <div class = "gameContainer">
+        {% for game in gameList %}
+        <div class = "gameItem">
+            <img id="gameImage" src="{{ gameList[game]["imageURL"] }}" alt="{{ game }} image" onerror="this.src = '{{ backupImage }}'">
+            <a id="gameName" href="../games/{{ game }}">{{ game }}</a>
+            <p id="gameDesc">: {{ gameList[game]["description"] }}</p>
+        </div>
+        {% endfor %}
     </div>
-
-
-
-
-
-    </div>
+    {% else %}
+    <p id="errorEmptyResults">
+        Oh no! We're experiencing difficulties finding games for you, please contact an admin :(
+    </p>
+    {% endif %}
 </body>
 </html>
