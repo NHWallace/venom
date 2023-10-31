@@ -1,0 +1,70 @@
+.settings_container{
+    display:grid;
+    grid-template-columns: 400px, 400px;
+    grid-template-rows: 1fr;
+    height:60vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 1000px;
+    margin-left: 200px;
+
+}
+
+.vertical {
+    border-left: 6px solid white;
+    height: 440px;
+    position:absolute;
+    left: 50%;
+}
+
+.settings_container_left{
+    grid-area:1/1/2/2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width:500px;
+    text-align: center;
+    gap:10px;
+    margin-right: 200px;;
+    /*padding-right: 400px;*/
+
+}
+
+.settings_container_left button{
+    width:300px;
+    height:80px;
+    background-color: blue;
+
+
+}
+
+.settings{
+    text-align: center;
+    color: azure;
+    padding-top: 30px;
+}
+.settings_container_right{
+    grid-area:1/2/2/3;
+    width:480px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;   
+
+    
+}
+/*.settings_container_right img{
+} */
+
+
+.profilepic{
+    height: 150px;
+    width:150px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 55px;
+}

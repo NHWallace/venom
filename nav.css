@@ -1,0 +1,66 @@
+header{
+    width: 100%;
+    z-index: 3;
+    padding-right: 20px;
+    padding-bottom: 13px;
+}
+
+.topnav{
+
+    height: 80px;
+    display: grid;
+    grid-template-columns: .1fr .8fr .3fr;
+    grid-template-rows: 150px;
+    align-items: center;
+
+}
+
+.topnav img{
+    height: 100px;
+    justify-content: center;
+}
+.topnav ul{
+    display: flex;
+    width:100%;
+    justify-content:start;
+}
+
+
+.topnav ul li{
+    padding-top: 13px;
+    display: inline-block;
+}
+
+.topnav ul li a{
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 16px;
+    
+}
+.topnav a:hover,.topnav a.active {
+    background-color: #ddd;
+    color: black;
+    transition: .5s;
+}
+
+.login_signup{
+    width:100%;
+    grid-column: span 1;
+
+}
+
+.topnav .login_signup ul{
+    width: 100%;
+    display: inline;
+    float: right; 
+
+}
+
+
+
+ .topnav .login_signup ul li{
+    float: right; 
+} 
+
