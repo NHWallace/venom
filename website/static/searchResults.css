@@ -1,45 +1,45 @@
 .gameContainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: normal;
-  align-items: flex-start;
-  align-content: normal;
-}
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: flex-start;
+    align-content: normal;
+  }
+  
+  .gameItem {
+    display: block;
+    margin: 0.25em;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    border-top: 1px solid black;
+    width: 25%;
+    height: 60px;
+  }
 
-.gameItem {
-  display: block;
-  margin: 0.25em;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
-  border-top: 1px solid black;
-  width: 100%;
-  height: 60px;
-}
+  .gameItem:nth-child(1) {
+    padding-top: 2em;
+    border-top: none
+  }
 
-.gameItem:nth-child(1) {
-  padding-top: 2em;
-  border-top: none;
-}
+  #gameImage {
+    padding-top: 6px;
+    height: 60px;
+    width: 90px;
+  }
 
-#gameImage {
-  padding-top: 6px;
-  height: 60px;
-  width: 90px;
-}
+  #gameName {
+    display: inline;
+  }
 
-#gameName {
-  display: inline;
-}
+  #gameDesc {
+    display: inline;
+  }
 
-#gameDesc {
-  display: inline;
-}
-
-#errorEmptyResults {
-  padding-top: 1em;
-  font-size: 72px;
-}
+  #errorEmptyResults {
+    padding-top: 1em;
+    font-size: 72px;
+  }
