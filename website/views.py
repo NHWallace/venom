@@ -24,6 +24,11 @@ storage = firebase.storage() # reference to our storage
 # allows routes to be called in other files
 views = Blueprint('views', __name__)
 
+@views.app_errorhandler(404)
+def handle404(e):
+    # Does something if and only if a page returns a 404 error
+    # A 404 error occurs when user tries to go to a bad URL
+    return render_template("404.html")
 
 @views.route('/', methods = ['POST','GET'])
 def home():
