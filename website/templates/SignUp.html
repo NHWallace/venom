@@ -42,9 +42,20 @@
 
 button:hover {
             background-color:rgb(37, 150, 190);
-
-
+}
     </style>
+    <script>
+        function signup() {
+            var email = document.getElementsByName("email").value;
+            var pass = docuemnt.getElementsByName("password").value;
+
+            alert("C:");
+        }
+        function changeButtonColor() {
+            var button = document.querySelector('button');
+            button.style.backgroundColor = "green"; // Change the background color of the button to green
+        }
+    </script>
 </head>
 
 
@@ -116,7 +127,7 @@ button:hover {
                     <input type="password" placeholder="Enter Password" required>
                 </div>
                
-                <button type="submit">Create Account</button>
+                <button type="submit" onclick="signup(); changeButtonColor()">Create Account</button>
             </form>
         </div>
     </div>
