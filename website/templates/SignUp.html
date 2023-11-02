@@ -46,8 +46,8 @@ button:hover {
     </style>
     <script>
         function signup() {
-            var email = document.getElementsByName("email").value;
-            var pass = docuemnt.getElementsByName("password").value;
+            var email = document.getElementsById("email").value;
+            var pass = docuemnt.getElementsById("password").value;
 
             alert("C:");
         }
@@ -119,12 +119,12 @@ button:hover {
           
                 <div class="form-item">
                    <p> <span class="form-item-icon material-symbols-rounded">email</span> Email</p>
-                    <input type="text" placeholder="Enter Email" required autofocus>
+                    <input type="text" id="email" placeholder="Enter Email" required autofocus>
               
 
                     <div class="form-item"> 
                         <p> <span class="form-item-icon material-symbols-rounded">lock</span> Password</p>
-                    <input type="password" placeholder="Enter Password" required>
+                    <input type="password" id="password" placeholder="Enter Password" required>
                 </div>
                
                 <button type="submit" onclick="signup(); changeButtonColor()">Create Account</button>
