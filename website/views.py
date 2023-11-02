@@ -30,6 +30,12 @@ def handle404(e):
     # A 404 error occurs when user tries to go to a bad URL
     return render_template("404.html")
 
+@views.app_errorhandler(403)
+def handle403(e):
+    # Does something if and only if a page returns a 403 error
+    # A 403 error occurs when user tries to access a page without being authorized
+    return render_template("403.html")
+
 @views.route('/', methods = ['POST','GET'])
 def home():
     
