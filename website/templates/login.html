@@ -174,13 +174,20 @@ function auth() {
     var password = document.getElementById("password").value; 
 
     /* Access to Account */
-    if (email === "user@gmail.com" && password === "user123") { // Use strict equality (===)
+/*     if (email === "user@gmail.com" && password === "user123") { // Use strict equality (===)
         window.location.href = "/Users/bonillamarissa/Documents/P.V/Account.html"; // Use a pathway to the account page
         alert("Logged in Successfully");
     } else {
         alert("Invalid Information");
         return;
-    }
+    } */
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        
+        console.log(errorCode);
+        console.log(errorMessage);
+    });
 }
 </script>
 
