@@ -1,266 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="../static/Home.css">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/nav.css"/>
+    <link rel="stylesheet" href="../static/Aboutus.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>About us</title>
     <style>
-        /* Your CSS styles go here */
-        body {
-            margin: 0;
-            background-image: url('../static/Sm.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #ffffff;
-            font-family: Monospace, sans-serif;
+        body{
+            background-color: rgb(59, 84, 114);
         }
-
-        .topnav {
-            font-family: 'Aldhabi', serif;
-            font-weight: bold;
-            font-size: 50px;
-            overflow: hidden;
-            background-color: transparent;
-            display: flex;
-            align-items: center;
-            height: 60px;
-            position: absolute;
-            top: 8px;
-            left: 16px;
-            font-size: 18px;
-        }
-
-        .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .logo {
-            max-height: 150%;
-            margin-left: 10px;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .topnav a.active {
-            background-color: #00BDFF;
-            color: white;
-        }
-
-        nav {
-            padding: 5px 0;
-            display: flex;
-            align-items: right;
-            height: 60px;
-        }
-
-
-
-
-
-
-
-        /* NEW */
-
-  
-
-
-        h2{
-            display: flex;
-            justify-content: center; /* Horizontal centering */
-            align-items: center; /* Vertical centering */
-
-            margin-top: .9px;
-           
-           margin-bottom: 5px;
-
-           font-size: 10rem; /* Adjust the font size to make it smaller */
-
-       
-            
-        }
-
-
-
-        /* Adjust the title */
-        .blue {
-        margin-top: .93%;
-        margin-bottom: .59%;
-        max-width: 50%; /* Adjust the maximum width to your desired size */
-        max-height: 50%; /* Adjust the maximum height to your desired size */
-        object-fit: cover; /* Scale the image proportionally to cover the entire container */
-    }
-
-        table {
-            position: center;
-            padding-left: 10%;
-            padding-right: 10%;
-          
-           
-            display: flex;
-            justify-content: center; /* Horizontal centering */
-            align-items: center; /* Vertical centering */
-            height: 100vh; /* Optionally, to center within the viewport height */
-        }
-
-
-        table2 {   
-            position: center;
-            padding-left: 10%;
-            padding-right: 10%;
-        
-
-
-         
-
-        
-            display: flex;
-            justify-content: center; /* Horizontal centering */
-            align-items: center; /* Vertical centering */
-            height: 100vh; /* Optionally, to center within the viewport height */
-        }
-
-        /* Style for table cells */
-        td {
-
-         
-         
-            background-color: #ffffff; /* Change the background color here */
-            text-align: center;
-            padding-right: .2%;
-            padding-left: .2%;
-           
-
-        }
-
-        td2 {
-
-         padding-top: 5px;  /*Padding from the box inside */
-         background-color: #ffffff; /* Change the background color here */
-         text-align: center;
-         padding-right: .2%;
-         padding-left: .2%;
-
-     }
-
-
-
-
-
-
-
-        /* Title Logo */
-        .image {
-            margin-top: .9%;
-            margin-bottom: 5%;
-           
-            max-width: 100%; /* Limit the maximum width of the image */
-            max-height: 100%; /* Limit the maximum height of the image */
-            object-fit: cover; /* Scale the image proportionally to cover the entire container */
-        }
-
     </style>
 </head>
+
+
+
 <body>
-    <!-- NEW -->
-    <div class="topnav">
-        <img class="logo" src="../static/m.png" alt="logo"/>
-        <a class="active" href="/">Home</a>
-        <a href="/login">Login</a>
-        <a href="/sign-up">Sign Up</a>
-        <a href="/games">Games</a>
-        <form id="searchForm" method="post">
-            <input type="text" name="searchQuery" placeholder="Find a game..">
-        </form>        
-    </div>
+    <header>
 
 
-    <h2>  <img src="../static/Venom.png" alt="Avatar" class="blue" > </h2>
+       
+<!-- Navigation Bar to Right -->
+        <div class="topnav">
+            <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
 
 
+ <!-- Navigation Links to Pages -->           
+      <ul>
+            <li> <a class="active" href="/">Home</a> </li>
+            <li> <a href="/games">Games</a> </li>
+            <li> <a href="/about-us">About us</a> </li>
 
 
+            <!-- Search Bar -->  
+            <li>  <form id="searchForm" method="post">
+                    <input type="text" name="searchQuery" placeholder="Find a game..">
+                </form>     
+            </li>
 
-
-
-
-    <div>
-        <!-- Table 1 -->
-
-        
-        <table width="100%" border="0">
-            
-            <tr valign="top"  >
-                <td bgcolor="#0000" width="10%" >
-                    <img src="../static/Game3.jpeg" alt="Avatar" class="image" >
-                    <b>Main Menu</b>
-                    <br />
-                   
-                </td>
-                <td bgcolor="#0000" width="10%">
-                    <img src="../static/Game1.jpg" alt="Avatar" class="image">
-                    Technical and Managerial Tutorials
-                </td>
-
-                <td bgcolor="#0000" width="10%">
-                    <img src="../static/Game2.jpeg" alt="Avatar" class="image">
-                    <b>Right Menu</b><br />
-                  
-                </td>
-            </tr>
-        </table>
-    </div>
+    `    </ul>
 
 
 
-
-     <!-- Table 2 -->
-
-    <div>
-        <table2 width="100%" border="0">
-            
-            <tr valign="top"  >
-                <td2 bgcolor="#0000" width="10%" padding-bottom: "10px" >
-                    <img src="../static/Game3.jpeg" alt="Avatar" class="image">
-                    <b>Main Menu</b>
-                    <br />
-                   
-                </td2>
-                <td2 bgcolor="#0000" width="10%" padding-bottom: "10px">
-                    <img src="../static/Game1.jpg" alt="Avatar" class="image">
-                    Technical and Managerial Tutorials
-                </td2>
-
-                <td2 bgcolor="#0000" width="10%" padding-bottom: "10px">
-                    <img src="../static/Game2.jpeg" alt="Avatar" class="image">
-                    <b>Right Menu</b><br />
-                  
-                </td2>
-            </tr>
-        </table2>
-    {% if gameList%}
-    <div class = "gameContainer">
-        {% for game in gameList %}
-        <div class = "gameItem">
-            <img id="gameImage" src="{{ gameList[game]["imageURL"] }}" alt="{{ game }} image" onerror="this.src = '{{ backupImage }}'">
-            <a id="gameName" href="../games/{{ game }}">{{ game }}</a>
-            <p id="gameDesc">: {{ gameList[game]["description"] }}</p>
+<!-- Navigation Bar to Left -->
+           <div class="login_signup">
+            <ul>
+                <li> <a id="sign-up" href="/sign-up">Sign up</a></li>
+                <li> <a id="login"  href="/login">Login</a></li>
+            </ul>
         </div>
-        {% endfor %}
+        </div>
+    </header>
+
     </div>
-    {% else %}
-    <p id="errorEmptyResults">
-        Oh no! We're experiencing difficulties finding games for you, please contact an admin :(
-    </p>
-    {% endif %}
+   
+    
 </body>
 </html>
