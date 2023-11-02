@@ -10,50 +10,63 @@
         body{
             background-color: rgb(59, 84, 114);
         }
+        /* Image Design */ 
+        .image-container {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55vh; /* Adjusted height for smaller size */
+        }
+        .image-container img.venom-logo {
+            width: 650px; /* Adjusted width for smaller size */
+            height: 500px;
+            margin: 0 10px;
+        }
+        
+        /* Images Under logo */ 
+        .image-container img {
+            padding-bottom: 50px; /* Adjusted padding to move the images up */
+            width: 200px; /* Adjusted width for smaller size */
+            height: 150px; /* Adjusted height for smaller size */
+            margin: 0px 10px;
+        }
     </style>
 </head>
 
-
-
 <body>
     <header>
-
-
-       
-<!-- Navigation Bar to Right -->
         <div class="topnav">
-            <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
-
-
- <!-- Navigation Links to Pages -->           
-      <ul>
-            <li> <a class="active" href="/">Home</a> </li>
-            <li> <a href="/games">Games</a> </li>
-            <li> <a href="/about-us">About us</a> </li>
-
-
-            <!-- Search Bar -->  
-            <li>  <form id="searchForm" method="post">
-                    <input type="text" name="searchQuery" placeholder="Find a game..">
-                </form>     
-            </li>
-
-    `    </ul>
-
-
-
-<!-- Navigation Bar to Left -->
-           <div class="login_signup">
+            <img class="topnav_logo" src="../static/venom logo.png" alt="venom logo">
             <ul>
-                <li> <a id="sign-up" href="/sign-up">Sign up</a></li>
-                <li> <a id="login"  href="/login">Login</a></li>
+                <li> <a class="active" href="/">Home</a> </li>
+                <li> <a href="/games">Games</a> </li>
+                <li> <a href="/about-us">About us</a> </li>
+                <li>
+                    <form id="searchForm" method="post">
+                        <input type="text" name="searchQuery" placeholder="Find a game..">
+                    </form>
+                </li>
             </ul>
-        </div>
+            <div class="login_signup">
+                <ul>
+                    <li> <a id="sign-up" href="/sign-up">Sign up</a></li>
+                    <li> <a id="login" href="/login">Login</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
+    <!-- Venom Logo -->
+    <div class="image-container">
+        <img class="venom-logo" src="../static/Venom.png" alt="Venom Logo">
     </div>
-   
     
+    <!-- 3 images -->
+    <div class="image-container">
+        <img src="../static/Game1.jpg" alt="Image 1">
+        <img src="../static/Game2.jpeg" alt="Image 2">
+        <img src="../static/Game3.jpeg" alt="Image 3">
+    </div>
 </body>
 </html>
