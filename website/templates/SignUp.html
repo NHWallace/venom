@@ -50,7 +50,21 @@ button:hover {
 }
 
 
+
+
     </style>
+    <script>
+        function signup() {
+            var email = document.getElementsById("email").value;
+            var pass = docuemnt.getElementsById("password").value;
+
+            alert("C:");
+        }
+        function changeButtonColor() {
+            var button = document.querySelector('button');
+            button.style.backgroundColor = "green"; // Change the background color of the button to green
+        }
+    </script>
 </head>
 
 
@@ -112,12 +126,13 @@ button:hover {
                     <p> <span class="form-item-icon material-symbols-rounded">email</span> Email</p>
                     <input type="text" name="signup_email" placeholder="Enter Email" required autofocus>
                 </div>
+              
                 <div class="form-item"> 
                     <p> <span class="form-item-icon material-symbols-rounded">lock</span> Password</p>
                     <input type="password" name="signup_password" placeholder="Enter Password" required>
                 </div>
                
-                <button type="submit">Create Account</button>
+                <button type="submit" onclick="signup(); changeButtonColor()">Create Account</button>
             </form>
         </div>
     </div>
