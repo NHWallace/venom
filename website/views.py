@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, session, url_for
 
 import pyrebase
 import time
@@ -20,6 +20,8 @@ firebase = pyrebase.initialize_app(firebase_config)
 db = firebase.database() # reference to our database
 
 storage = firebase.storage() # reference to our storage
+
+auth = firebase.auth() # reference to our auth service
 
 # allows routes to be called in other files
 views = Blueprint('views', __name__)
@@ -44,7 +46,7 @@ def home():
         # submitted form is a search form
             searchQuery = request.form.get("searchQuery")
             
-            if searchQuery is "":
+            if searchQuery == "":
                 # user entered a blank form, return them to current page
                 return redirect(request.path)
             else:
@@ -79,7 +81,7 @@ def aboutus():
         # Submitted form is a search form
             searchQuery = request.form.get("searchQuery")
             
-            if searchQuery is "":
+            if searchQuery == "":
                 # User entered a blank form, return them to current page
                 return redirect(request.path)
             else:
@@ -97,7 +99,7 @@ def search(query=""):
         # Submitted form is a search form
             searchQuery = request.form.get("searchQuery")
             
-            if searchQuery is "":
+            if searchQuery == "":
                 # User entered a blank form, return them to current page
                 return redirect(request.path)
             else:
@@ -132,20 +134,27 @@ def search(query=""):
 
 @views.route('/account', methods = ['POST','GET'])
 def account():
+    try:
+        # only works when user is signed in 
+        print(session['user'])
+    except KeyError:
+        return render_template("403.html")
+    user_id = session['user']
+    username = db.child("users").child(user_id).child("username").get().val()
     
     if request.method == "POST":
         if request.form.get("searchQuery"):
         # Submitted form is a search form
             searchQuery = request.form.get("searchQuery")
             
-            if searchQuery is "":
+            if searchQuery == "":
                 # User entered a blank form, return them to current page
                 return redirect(request.path)
             else:
                 redirectURL = "/search/" + searchQuery
                 return redirect(redirectURL)
             
-    return render_template("Account.html")
+    return render_template("Account.html", username=username)
 
 @views.route('/games', methods = ['POST','GET'])
 def games():
@@ -155,7 +164,7 @@ def games():
         # Submitted form is a search form
             searchQuery = request.form.get("searchQuery")
             
-            if searchQuery is "":
+            if searchQuery == "":
                 # User entered a blank form, return them to current page
                 return redirect(request.path)
             else:
@@ -163,3 +172,98 @@ def games():
                 return redirect(redirectURL)
             
     return render_template("Games.html")
+
+@views.route('/login', methods = ['POST','GET'])
+def login():
+    try:
+        # only works when user is signed in 
+        print(session['user'])
+        # user is signed in, redirect them to account page
+        return redirect('/account')
+    except KeyError:
+       # user is not signed in, let them access login page 
+       pass
+        
+    # Initialize empty message to return
+    message = ""
+
+    if request.method == "POST":
+            email = request.form["login_email"]
+            print("email submitted: " + email)
+            password = request.form["login_password"]
+            print("password submitted: " + password)
+            try:
+                user = auth.sign_in_with_email_and_password(email, password)
+                user_id = user['localId']
+                session['user'] = user_id
+                username = db.child("users").child(user_id).child("username").get().val()
+                if not username:
+                # username does not exist, create a starting username
+                    data = {
+                        "username": "default"
+                    }
+                    results = db.child("users").child(user_id).update(data)
+                return redirect('/account')
+            except:
+                print("ran into an error!")
+                # update error message to display to user
+                message = "Incorrect login information."
+
+    return render_template('login.html', message=message)
+
+
+@views.route('/logout', methods = ['POST','GET'])
+def logout():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery == "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+            
+    # attempt to delete session information, redirect logged out user to homepage
+    try:
+        del session['user']
+        auth.signOut()
+    except:
+    # user accessed logout function without being signed in, do nothing, redirect
+        pass
+    return redirect('/')
+
+
+@views.route('/sign-up', methods = ['POST','GET'])
+def sign_up():
+    try:
+        # only works when user is signed in 
+        print(session['user'])
+        # user is signed in, redirect them to account page
+        return redirect('/account')
+    except KeyError:
+       # user is not signed in, let them access sign_up page 
+       pass
+
+    print("request method = " + request.method)
+    # initialize error message to return
+    message = ""
+
+    if request.method == "POST":
+
+        email = request.form['signup_email']
+        print("email =  " + email)
+        password = request.form['signup_password']
+        print("password = " + password)
+        try:
+            print("trying to sign up...")
+            user = auth.create_user_with_email_and_password(email, password)
+            return redirect('/login')
+        except:
+            print("sign in failed because email exists")
+            message = "Email already exists!"
+                
+    return render_template('SignUp.html', message=message)
