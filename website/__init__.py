@@ -6,9 +6,7 @@ def create_app():
     app.config['SECRET_KEY'] = '2Vp32v9du23S8#dy0-a*sd3'
 
     from .views import views
-    from .auth import auth
 
     app.register_blueprint(views, url_prefix='/')
-    app.register_blueprint(auth, url_prefix='/')
 
     return app

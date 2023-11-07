@@ -40,8 +40,14 @@
     margin-top: 150px; /* Adjust the margin-top to position the card vertically */
 }
 
+.message {
+    padding-top: 1em;
+    font-size: 72px;    
+}
+
 button:hover {
             background-color:rgb(37, 150, 190);
+}
 
 
     </style>
@@ -67,16 +73,9 @@ button:hover {
  <!-- Navigation Links to Pages -->           
       <ul>
             <li> <a href="/">Home</a> </li>
-            <li> <a href="./games">Games</a> </li>
-            <li> <a href="./about-us">About us</a> </li>
-
-
-            <!-- Search Bar -->  
-            <li>  <form id="searchForm" method="post">
-                    <input type="text" name="searchQuery" placeholder="Find a game..">
-                </form>     
-            </li>
-
+            <li> <a href="/games">Games</a> </li>
+            <li> <a href="/about-us">About us</a> </li>
+            <!-- No search bar in sign up page because I said so-->
     `    </ul>
 
 
@@ -93,27 +92,29 @@ button:hover {
 
     </div>
 
+    {% if message %}
+    <div class="message">{{ message }}</div>
+    {% endif %}
+
    <!-- Logo in Card -->
     <div class="sign-up-container">
         <div class="sign-up-card">
-            <div class="sign-up-card-logo">
-                <img src="../static//venom logo.png" alt="snake">
-            </div>
-            <div class="sign-up-card-header">
-                <h1>Create Account</h1>
-                <div>Create Account to start gaming</div>
-            </div>
+            <form method="post">
+                <div class="sign-up-card-logo">
+                    <img src="../static//venom logo.png" alt="snake">
+                </div>
+                <div class="sign-up-card-header">
+                    <h1>Create Account</h1>
+                    <div>Create Account to start gaming</div>
+                </div>
 
-
-          
                 <div class="form-item">
-                   <p> <span class="form-item-icon material-symbols-rounded">email</span> Email</p>
-                    <input type="text" placeholder="Enter Email" required autofocus>
-              
-
-                    <div class="form-item"> 
-                        <p> <span class="form-item-icon material-symbols-rounded">lock</span> Password</p>
-                    <input type="password" placeholder="Enter Password" required>
+                    <p> <span class="form-item-icon material-symbols-rounded">email</span> Email</p>
+                    <input type="text" name="signup_email" placeholder="Enter Email" required autofocus>
+                </div>
+                <div class="form-item"> 
+                    <p> <span class="form-item-icon material-symbols-rounded">lock</span> Password</p>
+                    <input type="password" name="signup_password" placeholder="Enter Password" required>
                 </div>
                
                 <button type="submit">Create Account</button>
