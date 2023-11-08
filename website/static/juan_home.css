@@ -1,0 +1,69 @@
+.banner{
+    width:100%;
+    height: 300px;
+    text-align: center;
+}
+body{
+    height: 100vh;
+    text-align: center;
+    background-color: black;
+}
+.banner img{
+    height:300px;
+    align-self: flex-end;
+
+}
+.banner{
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+}
+
+.game_container{
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+img{
+    height:150px;
+}
+
+#1 {
+    grid-column: span 1;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.window{
+    height:500px;
+    width:100%;
+    display: grid;
+    grid-template-columns:  1fr 2fr 1fr;
+    grid-template-rows: 150px 150px 150px;
+    
+
+
+}
+
+ .gamePlaying{
+    background-color: pink;
+    grid-area:1/2/4/3 ;
+} 
+
+
+.recent .game #1{
+    grid-area:1/4/1/4;
+}
+
+.recent .game #2{
+    grid-area:2/4/2/5;
+}
+.recent .game #3{
+    grid-area:3/4/3/5;
+}
