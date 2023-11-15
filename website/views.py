@@ -250,8 +250,12 @@ def sign_up():
        pass
 
     print("request method = " + request.method)
-    # initialize error message to return
-    message = ""
+    
+    # Check if this route was passed a message. If not, initialize one.
+    try:
+        message
+    except NameError:
+        message = ""
 
     if request.method == "POST":
 
