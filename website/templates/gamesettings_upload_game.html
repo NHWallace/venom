@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/nav.css"/>
+    <link rel="stylesheet" href="../static/style.css"/>
+    <link rel="stylesheet" href="../static/gamesettings.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Upload Game</title>
+    <style>
+        body{
+            background-color: grey;
+            align-items: center;
+            justify-content: center;
+        }
+        settings_container{
+            margin-right: 400px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+        <header>
+        <!-- <img class=".sign-up-card-logo" src="./venom logo.png" alt="logo"/> -->
+        <div class="topnav">
+            <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
+           <ul>
+            <li> <a href="../templates/Home.html">Home</a></li>
+            <li> <a href="../templates/gaming_settings.html">Account</a></li>
+            <li> <a href="../templates/Games.html">Games</a></li>
+            <li> <a href="../templates/aboutus.html">About us</a></li>
+           </ul>
+           <div class="login_signup">
+            <ul>
+                <li> <a id="sign-up" href="./SignUp.html">Sign up</a></li>
+                <li> <a id="login"  href="./Login.html">Login</a></li>
+            </ul>
+         </div>
+        </div>
+    </header>
+    <h1 class="settings" >settings</h1>
+    <div class="settings_container">
+        <div class="settings_container_left">
+            <a href="./gaming_settings.html"><button type="button">Change Profile Picture</button></a>
+            <a href="./gaming_settings_chat_inbox.html"><button type="button">Inbox</button></a>
+            <a href="./gaming_Settings_Fav_Games.html"><button type="button">Favourite Games</button></a>
+            <button type="button">change username</button>
+            <button type="button">change username</button> 
+        </div>
+        <div class="vertical"></div>
+        <div class="settings_container_right">
+            <div class="sign-up-container">
+                <div class="sign-up-card">
+                    <div class="sign-up-card-logo">
+                        <!-- <img src="../static/venom logo.png" alt="snake"> -->
+                    </div>
+                    <div class="sign-up-card-header">
+                        <h1>Upload Game</h1>
+                    </div>
+                    <form action = " " method="post" class="sign-up-card-form">
+                        <div class="form-item" method="post">
+                            <span class="form-item-icon material-symbols-rounded">Title</span>
+                            <input type="text" name="" placeholder="Enter Title" required autofocus>
+                        </div>
+                        <div class="form-item" method="post">
+                            <span class="form-item-icon material-symbols-rounded">HTML</span>
+                            <input type="text" name="" placeholder="Enter HTML " required autofocus>
+                        </div>
+                        <div class="form-item" method="post">
+                            <span class="form-item-icon material-symbols-rounded">CSS</span>
+                            <input type="text" name="" placeholder="Enter CSS (OPTIONAL)"  autofocus>
+                        </div>
+                        <div class="form-item" method="post">
+                            <span class="form-item-icon material-symbols-rounded">Javascript</span>
+                            <input type="text" name="" placeholder="Enter Javascript (OPTIONAL)"  autofocus>
+                        </div>
+                        
+                        <div class="form-item" method="post">
+                            
+                            <span class="form-item-icon material-symbols-rounded">gallery_thumbnail</span>
+                            <input type="text" name="" placeholder="Enter Thumbnail (PNG ONLY) " required>
+                        </div>
+                        <button type="submit">Create Account</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+    
+
+
+</body>
+</html>
