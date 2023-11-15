@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, redirect, session, url_fo
 import pyrebase
 import time
 import requests
+import json
 
 # Firebase configuration 
 firebase_config = {
@@ -259,11 +260,33 @@ def sign_up():
         password = request.form['signup_password']
         print("password = " + password)
         try:
-            print("trying to sign up...")
+            print("Trying to sign up...")
             user = auth.create_user_with_email_and_password(email, password)
             return redirect('/login')
-        except:
-            print("sign in failed because email exists")
-            message = "Email already exists!"
+        except Exception as e:
+            # Convert e from HTTPError to json to dict
+            print("An error has occured during signup.")
+            print("------------------Full http error------------------")
+            print(e)
+
+            e = str(e)
+
+            print("-------------Error as displayed to user-------------")
+            # Get the message part of the returned http error response
+            start = e.find('\"message\"')
+            end = e.find('\"errors\"')
+            message = e[start+12:end-7]
+            message = message.strip() # Removes newline character at the end
+
+            # Replace returned message with a more user-friendly error message
+            if message == "INVALID_EMAIL":
+                message = "Please enter a valid email."
+            elif message == "WEAK_PASSWORD : Password should be at least 6 characters":
+                message = "Your password must contain at least 6 characters."
+            elif message == "EMAIL_EXISTS":
+                message = "An account with your email already exists."
+                message += " Please use a different email or sign in instead."
+            print(message)
+            print("----------------------------------------------------")
                 
     return render_template('SignUp.html', message=message)
