@@ -348,8 +348,8 @@ def favgames():
     return render_template("account_favgames.html")
 
 
-@views.route('/account/forgetpassword', methods = ['POST','GET'])
-def forgetpassword():
+@views.route('/account/changepas', methods = ['POST','GET'])
+def changepassword():
     
     if request.method == "POST":
         if request.form.get("searchQuery"):
@@ -363,4 +363,4 @@ def forgetpassword():
                 redirectURL = "/search/" + searchQuery
                 return redirect(redirectURL)
             
-    return render_template("account_forgetpassword.html")
+    return render_template("change_password.html")
