@@ -237,7 +237,6 @@ def logout():
         pass
     return redirect('/')
 
-
 @views.route('/sign-up', methods = ['POST','GET'])
 def sign_up():
     try:
@@ -312,7 +311,6 @@ def picture():
             
     return render_template("account_profile.html")
 
-
 @views.route('/account/inbox', methods = ['POST','GET'])
 def inbox():
     
@@ -346,7 +344,6 @@ def favgames():
                 return redirect(redirectURL)
             
     return render_template("account_favgames.html")
-
 
 @views.route('/account/changepas', methods = ['POST','GET'])
 def changepassword():
