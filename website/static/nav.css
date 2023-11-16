@@ -8,7 +8,6 @@ header{
 .topnav{
 
     font-family: 'Poppins', sans-serif;
-
     height: 80px;
     display: grid;
     grid-template-columns: .1fr .8fr .3fr;
