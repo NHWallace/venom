@@ -32,18 +32,12 @@
     /*padding-right: 400px;*/
 
 }
-
+/*Columns of Boxes on the left */
 .settings_container_left button{
     width:300px;
     height:80px;
-    background-color: rgba(130, 130, 133, 0.975);
-
-
-}
-
-.settings{
-    text-align: center;
-    color: azure;
+    background-color: #00BDFF;  /*Color of the TextBox*/
+    font-weight: 900; /*Bold Text*/
     padding-top: 30px;
 }
 .settings_container_right{
@@ -54,8 +48,6 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;   
-
-    
 }
 /*.settings_container_right img{
 } */
