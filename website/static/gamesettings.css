@@ -36,9 +36,10 @@
 .settings_container_left button{
     width:300px;
     height:80px;
+    font-size: large;   /*Size Text*/
     background-color: #00BDFF;  /*Color of the TextBox*/
     font-weight: 900; /*Bold Text*/
-    padding-top: 30px;
+    padding-top: 5px;
 }
 .settings_container_right{
     grid-area:1/2/2/3;

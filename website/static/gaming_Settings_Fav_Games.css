@@ -1,3 +1,12 @@
+.settings {
+    text-align: center;
+    margin-top: 80px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffff;
+}
+
+
+
 .settings_container_right .favgames ol li img{
     height: 150px;
     width: 150px;

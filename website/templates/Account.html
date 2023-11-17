@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/nav.css"/>
     <link rel="stylesheet" href="../static/gamesettings.css"/>
+ 
+<!-- Title on Top -->
     <title>Account</title>
+    <style>
+        .settings {
+            text-align: center;
+            margin-top: 80px;
+            font-family: 'Poppins', sans-serif;
+            color: #ffff;
+        }
+    </style>
+
     <style>
         body{
             background-color: rgb(114, 59, 94);
             align-items: center;
             justify-content: center;
-            
             text-align: center;
-         
             font-family: 'Poppins', sans-serif;
         }
     </style>
@@ -34,13 +43,11 @@
     <li> <a href="/games">Games</a> </li>
     <li> <a href="/about-us">About us</a> </li>
  
-
    <!-- Search Bar -->  
    <li>  <form id="searchForm" method="post">
          <input type="text" name="searchQuery" placeholder="Find a game..">
         </form>     
     </li> 
-
 </ul>
 
 <!-- Navigation Bar to Right LOGOUT-->
@@ -59,9 +66,7 @@
             <a href="/profile/picture"><button type="button">Change Profile Picture</button></a>
             <a href="/account/inbox"><button type="button">Inbox</button></a>
             <a href="/account/favgames"><button type="button">Favorite Games</button></a>
-            <a href="/account/changepas"><button type="button">Change Password</button></a>
-            
-            <button type="button">Game Tracker</button> 
+            <a href="/account/changepas"><button type="button">Change Password</button></a> 
         </div>
 
  <!-- Profile pic Box -->
