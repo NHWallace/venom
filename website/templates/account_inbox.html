@@ -91,9 +91,15 @@
             margin-right: 200px;
         }
 
-/* Snake logo */
-.login-card-logo img {
-  width: 89px; /* Snake logo size */
+/* Inbox Notification */
+.Inbox_N img {
+  width: 100px; /* Snake logo size */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: -10px; /* Space above logo */
+}
+/* Send Message Box */
+.Send img {
+  width: 100px; /* Snake logo size */
   height: auto; /* Maintain the aspect ratio */
   margin-top: -20px; /* Space above logo */
 }
@@ -149,8 +155,11 @@
                 <div class="login-card-container">
                 <!-- Message box on Right inbox -->
                      <div class="Mlogin-card">
-                        <img src="../static/Venom.png" alt="snake">
-
+                     <!-- Inbox Notification Pic -->
+                        <div class="Inbox_N">
+                        <img src="../static/iconenvelop.png">
+                                 </div>
+                                 
                         <h1>Inbox</h1>
                             <div class="Messages">
                                 <h1>hi</h1>
@@ -163,8 +172,8 @@
      <!-- Change-Password Box Left side -->
      <div class="login-card-container">
         <div class="login-card">
-            <div class="login-card-logo">
-                
+            <div class="Send">
+                <img src="../static/sendmessageicon.png">
             </div>
             <div class="login-card-header">
                 <h1>Send Message</h1>
