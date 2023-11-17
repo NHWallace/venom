@@ -16,15 +16,30 @@
             font-family: 'Poppins', sans-serif;
             color: #ffff;
         }
-    </style>
+        
+        /* Add hover effect for buttons over the boxes on left */
+        .settings_container_left a button,
+        .settings_container_right button {
+            transition: background-color 0.3s ease;
+        }
 
-  
+        .settings_container_left a button:hover,
+        .settings_container_right button:hover {
+            background-color: rgb(86, 138, 162) 
+        }
+         
+        /* Add hover effect for buttons over Change Profile Pic */
+         .profilepicPA a button {
+            transition: background-color 0.3s ease;
+              }
+        .profilepicPA a button:hover {
+            background-color: rgb(86, 138, 162) 
+             }
+    </style>
 </head>
 
-
 <body>
-        <header>
-
+    <header>
   <!-- Navigation Bar to Left -->
   <div class="topnav">
     <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
