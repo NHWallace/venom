@@ -184,31 +184,60 @@ def login():
     except KeyError:
        # user is not signed in, let them access login page 
        pass
-        
-    # Initialize empty message to return
+
     message = ""
+    # Check if this route was passed a message.
+    try:
+        session['message']
+        print("Login was called with the passed message:")
+        print(session['message'])
+        message = session['message']
+        del session['message']
+    except KeyError:
+        print("No message was passed to login.")
 
     if request.method == "POST":
-            email = request.form["login_email"]
-            print("email submitted: " + email)
-            password = request.form["login_password"]
-            print("password submitted: " + password)
-            try:
-                user = auth.sign_in_with_email_and_password(email, password)
-                user_id = user['localId']
-                session['user'] = user_id
-                username = db.child("users").child(user_id).child("username").get().val()
-                if not username:
-                # username does not exist, create a starting username
-                    data = {
-                        "username": "default"
-                    }
-                    results = db.child("users").child(user_id).update(data)
-                return redirect('/account')
-            except:
-                print("ran into an error!")
-                # update error message to display to user
-                message = "Incorrect login information."
+        email = request.form["login_email"]
+        print("email submitted: " + email)
+        password = request.form["login_password"]
+        print("password submitted: " + password)
+        try:
+            print("Attempting to login...")
+            user = auth.sign_in_with_email_and_password(email, password)
+            user_id = user['localId']
+            session['user'] = user_id
+            username = db.child("users").child(user_id).child("username").get().val()
+            if not username:
+            # username does not exist, create a starting username
+                data = {
+                    "username": "default"
+                }
+                results = db.child("users").child(user_id).update(data)
+            return redirect('/account')
+        except Exception as e:
+            print("An error has occured during login.")
+            print("------------------Full http error------------------")
+            print(e)
+
+            e = str(e)
+
+            print("-------------Error as displayed to user-------------")
+            # Get the error part of the returned http error response
+            start = e.find('\"message\"')
+            end = e.find('\"errors\"')
+            message = e[start+12:end-7]
+            message = message.strip() # Removes newline character at the end
+
+            """
+            Replace returned message with a more user-friendly error message.
+            There is only 1 known error passed back by firebase's login method.
+            Please update this if more error messages are found.
+            """
+            
+            if message == "INVALID_LOGIN_CREDENTIALS":
+                message = "Incorrect email or password. Please login again."
+
+            print(message)
 
     return render_template('login.html', message=message)
 
@@ -250,11 +279,16 @@ def sign_up():
 
     print("request method = " + request.method)
     
-    # Check if this route was passed a message. If not, initialize one.
+    message = ""
+    # Check if this route was passed a message.
     try:
-        message
-    except NameError:
-        message = ""
+        session['message']
+        print("Login was called with the passed message:")
+        print(session['message'])
+        message = session['message']
+        del session['message']
+    except KeyError:
+        print("No message was passed to sign-up.")
 
     if request.method == "POST":
 
@@ -265,7 +299,9 @@ def sign_up():
         try:
             print("Trying to sign up...")
             user = auth.create_user_with_email_and_password(email, password)
-            return redirect('/login')
+            message = "Signed up successfully. Please login."
+            session['message'] = message
+            return redirect(url_for('views.login'))
         except Exception as e:
             # Convert e from HTTPError to json to dict
             print("An error has occured during signup.")
