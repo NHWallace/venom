@@ -266,7 +266,6 @@ def logout():
         pass
     return redirect('/')
 
-
 @views.route('/sign-up', methods = ['POST','GET'])
 def sign_up():
     try:
@@ -348,7 +347,6 @@ def picture():
             
     return render_template("account_profile.html")
 
-
 @views.route('/account/inbox', methods = ['POST','GET'])
 def inbox():
     
@@ -383,9 +381,8 @@ def favgames():
             
     return render_template("account_favgames.html")
 
-
-@views.route('/account/forgetpassword', methods = ['POST','GET'])
-def forgetpassword():
+@views.route('/account/changepas', methods = ['POST','GET'])
+def changepassword():
     
     if request.method == "POST":
         if request.form.get("searchQuery"):
@@ -399,4 +396,4 @@ def forgetpassword():
                 redirectURL = "/search/" + searchQuery
                 return redirect(redirectURL)
             
-    return render_template("account_forgetpassword.html")
+    return render_template("change_password.html")

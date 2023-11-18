@@ -1,83 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/nav.css"/>
-    <link rel="stylesheet" href="../static/gamesettings.css"/>
-    <link rel="stylesheet" href="../static/gaming_settings_chat_inbox.css"/>
-    <title>Document</title>
-    <style>
-        body{
-            background-color: rgb(59, 84, 114);
-            align-items: center;
-            justify-content: center;
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-
-
-
-<body>
-        <header>
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/nav.css"/>
+        <link rel="stylesheet" href="../static/gamesettings.css"/>
+        <link rel="stylesheet" href="../static/change_password.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     
-  <!-- Image Logo Card -->
-  <div class="topnav">
-    <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
-
-
-
- <!-- Navigation Links to Pages -->           
- <ul>
-    <li> <a href="/">Home</a> </li>
-    <li> <a class="active" href="/account">Account</a> </li>
-    <li> <a href="/games">Games</a> </li>
-    <li> <a href="/about-us">About us</a> </li>
- </ul>
-
-
-
- <div class="login_signup">
-    <ul>
-        <li> <a id="sign-up" href="/sign-up">Sign up</a></li>
-        <li> <a id="login"  href="/login">Login</a></li>
-    </ul>
- </div>
-
-         </div>
-        </div>
-    </header>
-
-
-   
+    <!-- Title on Top -->
+        <title>Inbox</title>
+        <style>
+            .settings {
+                text-align: center;
+                margin-top: 80px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
     
-    <!-- Links to the textboxs -->
-    <h1 class="settings" >Settings</h1>
-    <div class="settings_container">
-        <div class="settings_container_left">
-            <a href="/profile/picture"><button type="button">Change Profile Picture</button></a>
-            <a href="/account/inbox"><button type="button">Inbox</button></a>
-            <a href="/account/favgames"><button type="button">Favorite Games</button></a>
-
-            <button type="button">Change Password</button>
-            <button type="button">Game Tracker</button> 
-        </div>
-
-
-
-
-        <div class="vertical"></div>
-        <div class="settings_container_right">
-            <div class="inbox">
-                <h1>Inbox</h1>
+                    /* Add hover effect for buttons over the boxes on left */
+                    .settings_container_left a button,
+            .settings_container_right button {
+                transition: background-color 0.3s ease;
+            }
+    
+            .settings_container_left a button:hover,
+            .settings_container_right button:hover {
+                background-color: rgb(86, 138, 162) 
+            }
+             
+            /* Add hover effect for buttons over Change Profile Pic */
+             .submit a button {
                 
+                transition: background-color 0.3s ease;
+                  }
+
+            .submit a button:hover {
+                background-color: rgb(86, 138, 162) 
+                 }
+
+                 .comment-textbox {
+        width: 100%;
+        padding: 10px; /* Adjust padding as needed */
+        box-sizing: border-box;
+        border: 2px solid #ccc; /* Add border styling if needed */
+        border-radius: 5px; /* Round the corners */
+    }
+
+    /*Inbox Box*/
+.Mlogin-card {
+  width: 300px; /* Adjust the width to make the box larger */
+  height: 599px; /* Adjust the height to make the message box */
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/*Inbox - Box Inside Inbox*/
+.mail {
+  width: 240px;
+  height: 50px; 
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Send-Message Box */
+.login-card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .login-card {
+            width: 290px;
+            height: 600px; 
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+    
+        /* Adjuct space between line and Message/inbox */
+        .login-card-container:last-child {
+            margin-right: 200px;
+        }
+
+/* Inbox Notification Image*/
+.Inbox_N img {
+  width: 98px; /* Snake logo size */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: -1px; /* Space above logo */
+}
+
+/* Send Message Box */
+.Send img {
+  width: 100px; /* Snake logo size */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: -8px; /* Space above logo */
+  margin-bottom: 23px;
+}
+
+h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+        </style>
+    
+    </head>
+    
+    <body>
+            <header>
+    
+      <!-- Navigation Bar to Left -->
+      <div class="topnav">
+        <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
+    
+     <!-- Navigation Links to Pages -->           
+     <ul>
+        <li> <a href="/">Home</a> </li>
+        <li> <a class="active" href="/account">Account</a> </li>
+        <li> <a href="/games">Games</a> </li>
+        <li> <a href="/about-us">About us</a> </li>
+     
+       <!-- Search Bar -->  
+       <li>  <form id="searchForm" method="post">
+             <input type="text" name="searchQuery" placeholder="Find a game..">
+            </form>     
+        </li> 
+    </ul>
+    
+    <!-- Navigation Bar to Right LOGOUT-->
+               <div class="login_signup">
+                <ul>
+                    <li> <a id="sign-up" href="/logout">Logout</a></li>
+                </ul>
+             </div>
+            </div>
+        </header>
+ 
+        <!-- Links to the textboxs -->
+        <h1 class="settings" >Settings</h1>
+        <div class="settings_container">
+            <div class="settings_container_left">
+                <a href="/profile/picture"><button type="button">Change Profile Picture</button></a>
+                <a href="/account/inbox"><button type="button">Inbox</button></a>
+                <a href="/account/favgames"><button type="button">Favorite Games</button></a>
+                <a href="/account/changepas"><button type="button">Change Password</button></a>
+            </div>
+    
+            <!--White-Line in the Middle -->
+            <div class="vertical"></div>
+       
+            <div class="settings_container_right">
+                <div class="login-card-container">
+
+
+                <!-- Message box on Right inbox -->
+                     <div class="Mlogin-card">
+                     <!-- Inbox Notification Pic -->
+                        <div class="Inbox_N">
+                        <img src="../static/iconenvelop.png">
+                                 </div>
+                        
+                    <!-- Inbox Recieved -->
+                        <h1>Inbox</h1>
+                        <di>Recieving Mail</di>
+                            <div class="mail"> </div>
+                            <div class="mail"></div>
+                            <div class="mail"></div>
+                            <div class="mail"></div>
+                            <div class="mail"></div>
+                     </div>
+                    
+                    
+<li>
+     <!-- Change-Password Box Left side -->
+     <div class="login-card-container">
+        <div class="login-card">
+            <div class="Send">
+                <img src="../static/sendmessageicon.png">
             </div>
 
-        </div>
+
+                <!-- Title of Left Box Message -->
+            <div class="login-card-header">
+                <h1>Send Message</h1>
+                <div>Limited to 500 words</div>
+            </div>
+                <form class="login-card-form">
+                    <!-- Comment pic mail -->
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">mail</span>
+                         <!-- text = email -->
+                        <input type="text" placeholder="Email" required autofocus>
+                    </div>
+                    
+                         <!-- Comment pic iron -->
+                         <div class="form-item"> 
+                            <textarea class="comment-textbox" placeholder="Enter Message" rows="8" maxlength="300" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
     </div>
-    
-
-
-</body>
-</html>
+</div>
+</form>
+</li>              
+    </body>
+    </html>

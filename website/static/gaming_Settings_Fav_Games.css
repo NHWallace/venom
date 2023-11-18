@@ -1,3 +1,12 @@
+.settings {
+    text-align: center;
+    margin-top: 80px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffff;
+}
+
+
+
 .settings_container_right .favgames ol li img{
     height: 150px;
     width: 150px;
@@ -58,5 +67,18 @@
 .settings_container_right .favgames ol li #3{
     color: white;
     grid-area: 1/2/1/3;
+}
+
+/* hidding the numbers next to the images */
+.settings_container_right .favgames ol li {
+    list-style: none; /* removes numbering */
+    position: relative;
+}
+
+.settings_container_right .favgames ol li::before {
+    content: ''; /* hides the content before the list item */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 

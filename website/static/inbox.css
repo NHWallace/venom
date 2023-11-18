@@ -3,28 +3,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  background: rgb(59, 84, 114);
+  background-image: url('BC.jpg');  /* Background */
+  background-size: cover;    /* Image will cover the entire viewport with the background image */
+  background-position: center;
+  background-attachment: fixed;   /* To full image */
+  font-family: monospace;   /* Title */
+}
+
+/*Left Box (Password-Box)*/
+.settings_container {
+  margin-top: -23px;    /* Space above the nav and Change_Password Box*/
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 120px;
+}
+
+/* Add a container for the login cards */
+.login-cards-container {
+  display: flex;
+  gap: 20px; /* Adjust the gap between the login cards as needed */
+}
+
+/* Adjust the margin-right to provide space between the login cards */
+.login-card-container:last-child {
+  margin-right: 0;
+}
+
+.login-card-container {
+  display: flex;
+  gap: 20px;
+   /* margin-bottom: 50px;    Space above the nav and Change_Password Box*/
+   /* margin-right: 500px;    Space between white-line & vemon box*/
 }
 
 .login-card {
-  width: 400px;
+  width: 200px;
   background: rgba(255, 255, 255, 0.5);
-  padding: 4rem;
+  padding: 2rem;    /*Padding of the Snake Box*/
   border-radius: 10px;
   position: relative;
   z-index: 1;
 }
 
+/* Adjust the margin-right to provide space between the login cards */
+.login-card-container:last-child {
+  margin-right: 0;
+}
+
 .login-card::before {
   content: "";
   position: absolute;
-  background: rgba(255, 255, 255, 0.15);
+
   inset: 0;
   transform: rotate(-5deg);
   z-index: -1;
@@ -36,9 +66,11 @@ body {
   text-align: center;
 }
 
-.login-card a {
-  text-decoration: none;
-  color: #35339a;
+.login-card-logo img {
+  width: 70px; /* Snake logo size */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: -20px; /* Space above logo */
+
 }
 
 .login-card a:hover {
@@ -46,7 +78,8 @@ body {
 }
 
 .login-card-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: -25px;  /* Space below logo */
 }
 
 .login-card-header h1 {
@@ -76,13 +109,10 @@ body {
   left: 1.4rem;
   font-size: 1.3rem;
   opacity: 0.4;
+  color:rgb(37, 111, 111); /*Color iron in Card  */
 }
 
-.login-card-form .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
+
 
 .login-card-form .form-item-other {
   display: flex;
@@ -97,12 +127,13 @@ body {
   font-size: calc(1rem * 0.8);
 }
 
+/*Buttons enterly*/
 .login-card input[type="text"],
 .login-card input[type="password"],
 .login-card input[type="email"] {
   border: none;
   outline: none;
-  background-attachment: rgba(255, 255, 255, 0.3);
+  background-attachment: rgb(255, 0, 0);
   padding: 1rem 1.5rem;
   padding-left: calc(1rem * 3.5);
   border-radius: 100px;
@@ -114,14 +145,8 @@ body {
   background: white;
 }
 
-.login-card input[type="chceckbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: black;
-}
-
 .login-card button {
-  background: black;
+  background: rgb(0, 0, 0);
   color: #fff;
   padding: 1rem;
   border-radius: 100px;
@@ -174,116 +199,6 @@ body {
   transform: scale(1.1);
 }
 
-.sign-up-card {
-  width: 450px;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 4rem;
-  border-radius: 10px;
-  position: relative;
-}
-
-.sign-up-card::before {
-  content: "";
-  position: absolute;
-  background: rgba(255, 255, 255, 0.15);
-  inset: 0;
-  transform: rotate(-5deg);
-  z-index: -1;
-}
-
-.sign-up-card-logo img {
-  width: 100px;
-}
-
-.sign-up-card-logo,
-.sign-up-card-header {
-  text-align: center;
-}
-
-.sign-up-card-header {
-  margin-bottom: 2rem;
-}
-
-.sign-up-card-header h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.sign-up-card-header h1 + div {
-  font-size: calc(1rem * 0.2);
-  opacity: 0.8;
-}
-
-.sign-up-card-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.sign-up-card-form .form-item {
-  position: relative;
-}
-
-.sign-up-card-form .form-item .form-item-icon {
-  position: absolute;
-  top: 0.82rem;
-  left: 1.4rem;
-  font-size: 1.3rem;
-  opacity: 0.4;
-}
-
-.form-item input[type="text"],
-.sign-up-card input[type="date"],
-.sign-up-card input[type="password"],
-.sign-up-card input[type="mail"],
-.sign-up-card input[type="celebration"] {
-  border: none;
-  outline: none;
-  background-attachment: rgba(255, 255, 255, 0.3);
-  padding: 1rem 1.5rem;
-  padding-left: calc(1rem * 3.5);
-  border-radius: 100px;
-  width: 100%;
-  transition: background 0.5s;
-}
-
-.form-item-Fn-Ln input[type="text"] {
-  border: none;
-  outline: none;
-  background-attachment: rgba(255, 255, 255, 0.3);
-  padding: 1rem 1.5rem;
-
-  border-radius: 100px;
-  width: 100%;
-  transition: background 0.5s;
-}
-
-.sign-up-card input:focus {
-  background: white;
-}
-
-.sign-up-card button {
-  background: black;
-  color: #fff;
-  padding: 1rem;
-  border-radius: 100px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transform: background 0.5s;
-}
-
-.sign-up-card-form button {
-  background-color: rgba(0, 0, 0, 0.85);
-  cursor: pointer;
-}
-
-.form-item-Fn-Ln {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 
 @media (max-width: 768px) {
   body {
@@ -291,7 +206,9 @@ body {
   }
 
   .login-card {
-    width: 300px;
+    width: 100px;
     padding: 2rem;
+
   }
+
 }

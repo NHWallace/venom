@@ -1,0 +1,9 @@
+body{
+    background-image: url('BC.jpg');  /* Background */
+    background-size: cover;    /* Image will cover the entire viewport with the background image */
+    background-position: center;
+    background-attachment: fixed;   /* To full image */
+  
+}
+
+
