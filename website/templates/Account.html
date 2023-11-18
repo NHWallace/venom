@@ -26,15 +26,33 @@
         .settings_container_left a button:hover,
         .settings_container_right button:hover {
             background-color: rgb(86, 138, 162) 
-        }
-         
+        }    
+      
+
         /* Add hover effect for buttons over Change Profile Pic */
          .profilepicPA a button {
             transition: background-color 0.3s ease;
               }
+
         .profilepicPA a button:hover {
             background-color: rgb(86, 138, 162) 
+             }    
+             
+              /* Title under Pic Profile Picture */
+             .titlePP{
+                color:#ffff;
+                margin-left: 200px;
+                font-size: 40px;
              }
+
+             
+             .submitbutton{
+                margin-left: 200px;
+                font-size: 40px;
+             }    
+
+            
+
     </style>
 </head>
 
@@ -42,7 +60,7 @@
     <header>
   <!-- Navigation Bar to Left -->
   <div class="topnav">
-    <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
+    <img  class=" topnav_logo" src="../static/venom logo.png" alt="venom logo">
 
  <!-- Navigation Links to Pages -->           
  <ul>
@@ -81,13 +99,13 @@
         <div class="vertical"></div>
         <div class="settings_container_right">
             <div>
-                <div class="profilepicPA">
-                    <img>
+                <div class="profilepicPA">       
                 </div>
-                <h1><span style="color: white;">Change Profile Picture</span></h1>
+               <div class = "titlePP"> Profile Picture</div>
+               <div class = "submitbutton">
                 <button type="button">Change Profile Picture</button>
             </div>
-
+            </div>
         </div>
     </div>
     

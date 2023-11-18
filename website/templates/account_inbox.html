@@ -14,7 +14,7 @@
             .settings {
                 text-align: center;
                 margin-top: 80px;
-                font-family: 'Poppins', sans-serif;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
     
                     /* Add hover effect for buttons over the boxes on left */
@@ -30,6 +30,7 @@
              
             /* Add hover effect for buttons over Change Profile Pic */
              .submit a button {
+                
                 transition: background-color 0.3s ease;
                   }
 
@@ -45,10 +46,11 @@
         border-radius: 5px; /* Round the corners */
     }
 
+    /*Inbox Box*/
 .Mlogin-card {
-  width: 200px; /* Adjust the width to make the box larger */
+  width: 300px; /* Adjust the width to make the box larger */
   height: 599px; /* Adjust the height to make the message box */
-  margin-top: 65px;
+  margin-top: 60px;
   background: rgba(255, 255, 255, 0.5);
   padding: 2rem;
   border-radius: 10px;
@@ -56,20 +58,19 @@
   z-index: 1;
 }
 
-/*Message Box inside Inbox*/
-.Messages {
-  width: 140px;
-  height: 300px; 
-  margin-top: 50px;
+/*Inbox - Box Inside Inbox*/
+.mail {
+  width: 240px;
+  height: 50px; 
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 10px;
   position: relative;
   z-index: 1;
- 
 }
 
-/* Message Box */
+/* Send-Message Box */
 .login-card-container {
             display: flex;
             gap: 20px;
@@ -91,19 +92,24 @@
             margin-right: 200px;
         }
 
-/* Inbox Notification */
+/* Inbox Notification Image*/
 .Inbox_N img {
-  width: 100px; /* Snake logo size */
+  width: 98px; /* Snake logo size */
   height: auto; /* Maintain the aspect ratio */
-  margin-top: -10px; /* Space above logo */
+  margin-top: -1px; /* Space above logo */
 }
+
 /* Send Message Box */
 .Send img {
   width: 100px; /* Snake logo size */
   height: auto; /* Maintain the aspect ratio */
-  margin-top: -20px; /* Space above logo */
+  margin-top: -8px; /* Space above logo */
+  margin-bottom: 23px;
 }
 
+h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
         </style>
     
     </head>
@@ -153,18 +159,23 @@
        
             <div class="settings_container_right">
                 <div class="login-card-container">
+
+
                 <!-- Message box on Right inbox -->
                      <div class="Mlogin-card">
                      <!-- Inbox Notification Pic -->
                         <div class="Inbox_N">
                         <img src="../static/iconenvelop.png">
                                  </div>
-                                 
-                        <h1>Inbox</h1>
-                            <div class="Messages">
-                                <h1>hi</h1>
-                            </div>
                         
+                    <!-- Inbox Recieved -->
+                        <h1>Inbox</h1>
+                        <di>Recieving Mail</di>
+                            <div class="mail"> </div>
+                            <div class="mail"></div>
+                            <div class="mail"></div>
+                            <div class="mail"></div>
+                            <div class="mail"></div>
                      </div>
                     
                     
@@ -175,9 +186,12 @@
             <div class="Send">
                 <img src="../static/sendmessageicon.png">
             </div>
+
+
+                <!-- Title of Left Box Message -->
             <div class="login-card-header">
                 <h1>Send Message</h1>
-                <div>Please enter user-email and message</div>
+                <div>Limited to 500 words</div>
             </div>
                 <form class="login-card-form">
                     <!-- Comment pic mail -->

@@ -50,16 +50,19 @@
     align-items: center;
     justify-content: center;   
 }
-/*.settings_container_right img{
-} */
+
+
 
 
 .profilepicPA{
     height: 150px;
     width:150px;
     border-radius: 50%;
-    background-color: white;
-    margin-left: 80px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 250px;
+    margin-top: -150px;
+    margin-bottom: 30px;
+    
 }
 
 
@@ -68,5 +71,6 @@
     width:150px;
     border-radius: 50%;
     background-color: white;
-    margin-left: 80px;
+    
+
 }

@@ -211,7 +211,7 @@ body {
 }
 
 .sign-up-card-header h1 + div {
-  font-size: calc(1rem * 0.8);
+  font-size: calc(1rem * 0.2);
   opacity: 0.8;
 }
 

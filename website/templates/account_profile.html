@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/gamesettings.css"/>
     <link rel="stylesheet" href="../static/Background.css"/>
 
-    <!-- Title on Top -->
+<!-- Title on Top -->
     <title>Account</title>
     <style>
         .settings {
@@ -16,8 +16,9 @@
             font-family: 'Poppins', sans-serif;
             color: #ffff;
         }
-                /* Add hover effect for buttons over the boxes on left */
-                .settings_container_left a button,
+        
+        /* Add hover effect for buttons over the boxes on left */
+        .settings_container_left a button,
         .settings_container_right button {
             transition: background-color 0.3s ease;
         }
@@ -25,24 +26,41 @@
         .settings_container_left a button:hover,
         .settings_container_right button:hover {
             background-color: rgb(86, 138, 162) 
-        }
-         
+        }    
+      
+
         /* Add hover effect for buttons over Change Profile Pic */
          .profilepicPA a button {
             transition: background-color 0.3s ease;
               }
+
         .profilepicPA a button:hover {
             background-color: rgb(86, 138, 162) 
+             }    
+             
+              /* Title under Pic Profile Picture */
+             .titlePP{
+                color:#ffff;
+                margin-left: 200px;
+                font-size: 40px;
              }
+
+             
+             .submitbutton{
+                margin-left: 200px;
+                font-size: 40px;
+             }    
+
+            
+
     </style>
 </head>
 
 <body>
-        <header>
-
-  <!-- Navigation Bar to Left-->
+    <header>
+  <!-- Navigation Bar to Left -->
   <div class="topnav">
-    <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
+    <img  class=" topnav_logo" src="../static/venom logo.png" alt="venom logo">
 
  <!-- Navigation Links to Pages -->           
  <ul>
@@ -50,13 +68,12 @@
     <li> <a class="active" href="/account">Account</a> </li>
     <li> <a href="/games">Games</a> </li>
     <li> <a href="/about-us">About us</a> </li>
-
+ 
    <!-- Search Bar -->  
    <li>  <form id="searchForm" method="post">
          <input type="text" name="searchQuery" placeholder="Find a game..">
         </form>     
     </li> 
-
 </ul>
 
 <!-- Navigation Bar to Right LOGOUT-->
@@ -67,7 +84,7 @@
          </div>
         </div>
     </header>
-
+       
     <!-- Links to the textboxs -->
     <h1 class="settings" >Settings</h1>
     <div class="settings_container">
@@ -75,24 +92,22 @@
             <a href="/profile/picture"><button type="button">Change Profile Picture</button></a>
             <a href="/account/inbox"><button type="button">Inbox</button></a>
             <a href="/account/favgames"><button type="button">Favorite Games</button></a>
-            <a href="/account/changepas"><button type="button">Change Password</button></a>> 
+            <a href="/account/changepas"><button type="button">Change Password</button></a> 
         </div>
 
  <!-- Profile pic Box -->
         <div class="vertical"></div>
         <div class="settings_container_right">
             <div>
-                <div class="profilepic">
-                    <img>
+                <div class="profilepicPA">       
                 </div>
-                <h1><span style="color: white;">Change Profile Picture</span></h1>
+               <div class = "titlePP"> Profile Picture</div>
+               <div class = "submitbutton">
                 <button type="button">Change Profile Picture</button>
             </div>
-
+            </div>
         </div>
     </div>
     
-
-
 </body>
 </html>
