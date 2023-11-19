@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/nav.css"/>
+    <link rel="stylesheet" href="../static/Aboutus.css"/>
+    <link rel="stylesheet" href="../static/Background.css "/>
+    <link rel="stylesheet" href="../static/juan_home.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+
+    <style>
+
+ /* Stlye of text */
+        .hero {
+            margin-top: -99px;
+           color:rgb(255, 255, 255);
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           text-align: center;
+           height: 90vh; /* Ensure the hero section takes up the full viewport height */
+            }
+
+ /* Games Title - Font */
+ .hero h1 {
+            /* Adjust title */
+            font-size: 70px;
+            /* Neon Glow Font */
+            position: relative;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffffff; /* Font color */
+            /* Neon Glow */
+            text-shadow: 0 0 5px #000000, 0 0 10px #000000,
+                0 0 15px #00BDFF, 0 0 20px #00BDFF,
+                0 0 25px #00BDFF, 0 0 30px #00BDFF, 0 0 35px #000000;
+        }
+
+        /* Play it, love it or Beat it - Font */
+        .hero p {
+            font-size: 20px;
+            margin-top: 0;
+            align-items: center;  
+        }
+
+     /* Space at the end of game */
+          .endgame {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <header>
+<!-- Navigation Bar to Right -->
+        <div class="topnav">
+            <img  class=" topnav_logo"src="../static/venom logo.png" alt="venom logo">
+
+ <!-- Navigation Links to Pages -->           
+      <ul>
+        <li> <a href="/">Home</a> </li>
+        <li> <a class="active" href="/games">Games</a> </li>
+        <li> <a href="/about-us">About us</a> </li>
+
+
+
+            <!-- Search Bar -->  
+            <li>  <form id="searchForm" method="post">
+                    <input type="text" name="searchQuery" placeholder="Find a game..">
+                </form>     
+            </li>
+    `    </ul>
+
+
+<!-- Navigation Bar to Left -->
+           <div class="login_signup">
+            <ul>
+                <li> <a id="sign-up" href="/sign-up">Sign up</a></li>
+                <li> <a  id="login"  href="/login">Login</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    </div>
+
+    <!-- Title -->
+    <div class="hero">
+        <!-- Box for Play it, Love it or Beat it -->     
+            <h1>Games</h1>
+            <p>Love it, Play it or Beat it</p>
+        </div>
+
+
+
+        <div class="window"> 
+            <div class="gamePlaying">
+    
+            </div>
+            <div class="recent">
+                <div class="game" id="1"> 
+                    <img src="../static/Mario.jpg" alt="mario kart">
+                </div>
+                <div class="game" id="2">
+                    <img src="../static/sonic game.jpg" alt="sonic">
+                </div>
+                <div class="game" id="3">
+                    <img src="../static/mw3.jpg" alt="mw3">
+        
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3>Newest Games</h3>
+        <div>
+            <div class="game_container ">
+                <div class="game" id="5"> 
+                    <img src="../static/mariokart.avif" alt="mario kart">
+                </div>
+                <div class="game" id="6">
+                    <img src="../static/sonic game.jpg" alt="sonic">
+                </div>
+                <div class="game" id="7">
+                    <img src="../static/Game2.png" alt="mw3">
+        
+                </div>
+   
+            </div>
+            <div class="game_container ">
+                <div class="game" id="5"> 
+                    <img src="../static/PacMan.jpg">
+                </div>
+                <div class="game" id="6">
+                    <img src="../static/m.png">
+                </div>
+                <div class="game" id="7">
+                    <img src="../static/PacMan.jpg" >
+        
+
+
+
+
+            </div>
+        </div>
+
+
+
+    
+</body>
+</html>
