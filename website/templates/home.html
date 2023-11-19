@@ -4,33 +4,118 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/nav.css"/>
     <link rel="stylesheet" href="../static/Aboutus.css"/>
+    <link rel="stylesheet" href="../static/Background.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
+    <title>Home</title>
     <style>
-        body{
-            background-color: rgb(59, 84, 114);
-        }
+
         /* Image Design */ 
         .image-container {
             margin-bottom: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 55vh; /* Adjusted height for smaller size */
+            height: 55vh; 
         }
         .image-container img.venom-logo {
-            width: 650px; /* Adjusted width for smaller size */
+            width: 650px; 
             height: 500px;
             margin: 0 10px;
         }
         
         /* Images Under logo */ 
         .image-container img {
-            padding-bottom: 50px; /* Adjusted padding to move the images up */
-            width: 200px; /* Adjusted width for smaller size */
-            height: 150px; /* Adjusted height for smaller size */
-            margin: 0px 10px;
+           margin-bottom: 50px; 
+            width: 290px; 
+            height: 150px; 
+            margin: 0 10px;
         }
+        .venompic{
+            height: 300px;
+            width: 1299px;
+            margin: 0 110px;
+            margin-top: -30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: aliceblue;
+            font-size: 30px;
+        }
+
+        /*Inbox Box*/
+        .Mlogin-card {
+            width: 250px; 
+            height: 599px; 
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /*Inbox - Box Inside Inbox*/
+        .mail {
+            width: 200px;
+            height: 50px; 
+            margin-top: 23px;
+            margin-bottom: -10px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1rem;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .settings_container_right,
+        .login-card-container {
+            flex: 1;
+        }
+
+        .body-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        /* Game_Boxes */
+        .login-card {
+            width: 290px;
+            height: 500px; 
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            margin-left: 30px;
+            margin-right: 30px;
+            
+        }
+ h4{
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h5{
+    padding-left: 137px;
+    padding-top: 40px;
+    font-size: 50px;
+    color:rgb(255, 255, 255);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h6{
+    color:rgb(255, 255, 255);
+    margin-bottom: -10px;
+}
+.space{ padding: 110px;}
+
+.space2{ padding: 10px;}
+
     </style>
 </head>
 
@@ -42,11 +127,6 @@
                 <li> <a class="active" href="/">Home</a> </li>
                 <li> <a href="/games">Games</a> </li>
                 <li> <a href="/about-us">About us</a> </li>
-                <li>
-                    <form id="searchForm" method="post">
-                        <input type="text" name="searchQuery" placeholder="Find a game..">
-                    </form>
-                </li>
             </ul>
             <div class="login_signup">
                 <ul>
@@ -59,14 +139,51 @@
 
     <!-- Venom Logo -->
     <div class="image-container">
-        <img class="venom-logo" src="../static/Venom.png" alt="Venom Logo">
+        <img class="venom-logo" src="../static/P.V.T.png" alt="Venom Logo">
     </div>
     
-    <!-- 3 images -->
-    <div class="image-container">
-        <img src="../static/Game1.jpg" alt="Image 1">
-        <img src="../static/Game2.jpeg" alt="Image 2">
-        <img src="../static/Game3.jpeg" alt="Image 3">
+    <!-- Venompic in the middle -->
+    <div class="venompic">
+        <img class="venompic" src="../static/viper.jpg" alt="Venom Logo">
     </div>
+
+    <!-- 3 images -->
+
+    <h5>Games Coming Soon</h5>
+    <div class="image-container">
+        
+
+        <div class="login-card">
+        <img src="../static/Mario.jpg" alt="Image 1"><h4>"Super Mario 3D World"</h4>"Super Mario 3D World," 
+        simply put, is the best Mario game that's been made in the last five years. It's gorgeous, fresh, 
+        and perfectly designed. Like the best "Super Mario" games of the modern era, it seamlessly blends 
+        nostalgia-laced gameplay with fresh twists. 
+        </div>
+
+        <div class="login-card">
+        <img src="../static/Pokemon.jpg" alt="Image 2"><h4>Pokemon GO! </h4> Travel between the real world 
+        and the virtual world of Pokémon with Pokémon GO for iPhone and Android devices. 
+        With Pokémon GO, you'll discover Pokémon in a whole new world—your own! Pokémon GO 
+        gives you the chance to explore real locations and search far and wide for Pokémon. 
+        More and more Pokémon continue to appear around the globe, including rare and powerful Legendary Pokémon.
+        </div>
+
+        <div class="login-card">
+        <img src="../static/Sonic.jpg" alt="Image 3"><h4>Sonic The Hedgehog</h4> The Hedgehog is a video game franchise created by
+         Yuji Naka, and is developed and owned by Sega.The protagonist of the series is a blue hedgehog named Sonic 
+         the Hedgehog, whose peaceful life is often interrupted by the series's main antagonist, Doctor Eggman. 
+        </div>
+
+     
+    </div>
+   
+
+   
 </body>
+
+<end> <div class="space"></div></end>
+<footer><h6>Course CSE 4550 (01) - SOFTWARE ENGINEERING </h6>
+    <h6>©Copyright 2023</h6></footer>
+    <end> <div class="space2"></div></end>
+
 </html>
