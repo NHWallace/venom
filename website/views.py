@@ -398,6 +398,24 @@ def messages():
             
     return render_template("account_messages.html")
 
+@views.route('/account/no_message', methods = ['POST','GET'])
+def no_message():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery is "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+            
+    return render_template("account_no_message.html")
+
+
 @views.route('/account/favgames', methods = ['POST','GET'])
 
 @views.route('/account/changepas', methods = ['POST','GET'])
