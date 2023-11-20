@@ -5,14 +5,148 @@
     <link rel="stylesheet" href="../static/nav.css"/>
     <link rel="stylesheet" href="../static/Aboutus.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="../static/Background.css"/>
    
   
     <title>About us</title>
     <style>
-        body{
-            background-color:  rgb(59, 84, 114);
+        h1{ font: 75px;
+            margin-top: 10px;
+            color:  rgb(255, 255, 255);
+   }
+
+        h5{
+            font-size: 18px;
+            color: rgb(255, 255, 255);
         }
+        h3{
+            margin-top: 170px;
+            font-size: 48px;
+            color: rgb(2, 104, 129);
+        }
+        h4{
+            font-size: 20px;
+            color:  rgb(255, 255, 255);
+        }
+        h2{
+            padding-top: 20px;
+            font-size: 20px;
+            color: rgb(3, 77, 96);
+        }
+/* Centering Logo */
+        .topnav_logo
+            {   
+                text-align: center;
+                height: 430px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto; 
+                margin-bottom: -120px;
+}
+
+
+
+
+        body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Boxes */
+.card {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 300px;
+    background-color: #ffffffbf; 
+   
+}
+
+/*Banner */
+.about-section {
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(3, 77, 96);
+  height: 170px;
+  margin-top: 120px;
+  margin-bottom: -40px;
+}
+
+.container {
+  padding: 0 16px;
+  color:rgb(0, 0, 0);
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*Title*/
+.title {
+  color: rgba(26, 26, 26, 0.615);
+    }
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Postion of Box TeamMembers*/
+.row{       
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: 100px;
+            margin-right: 100px;}
+
+        /* Footer */
+        .endgame {
+            margin-bottom: -10px;
+        }
+        .space{  padding: 90px;}
+        .space2{  padding: 10px;}
+        h6{color: aliceblue;}
+
+
     </style>
 </head>
 
@@ -34,16 +168,7 @@
             
             <li> <a href="/games">Games</a> </li>
             <li> <a class="active" href="/about-us">About us</a> </li>
-
-
-
-            <!-- Search Bar -->  
-            <li>  <form id="searchForm" method="post">
-                    <input type="text" name="searchQuery" placeholder="Find a game..">
-                </form>     
-            </li>
-
-    `    </ul>
+        </ul>
 
 
 
@@ -56,30 +181,166 @@
         </div>
         </div>
     </header>
-
     </div>
-   
-
     
-    <div class="AboutUS">
+<!--Inside Banner -->
+    <div class="about-section">
         <h1>About Us</h1>
-        <img src="../static/venom logo.png" alt="venom logo">
+        <h5>"Empowering Gamers Everywhere<br> Providing Seamless, Thrilling, and Secure Game Hosting Solutions"</br> </h5>
+      </div>
+      
+
+<!-- Logo -->
+      <img class="topnav_logo" src="../static/P.V.T.png" alt="venom logo">
+
+<!-- About Us Summary -->
+      <div class="AboutUS">
         <p>
-            <h2>"Empowering Gamers Everywhere: Providing Seamless, Thrilling, and Secure Game Hosting Solutions."</h2>
+            <h4> 
+                <br>“Welcome to Venom, the ultimate gaming destination for gamers of all ages!"</br> 
+                <br> Our website is dedicated to providing you with the latest and greatest in gaming news,</br> 
+                <br> reviews, and features. We are passionate about gaming and strive to create a community</br> 
+                <br> that shares our love for this amazing art form. Our team of experienced writers and editors </br>
+                <br> work tirelessly to bring you the most comprehensive and insightful content possible. Whether </br>  
+                <br> you’re a hardcore gamer or just starting out, we have something for everyone.</br> 
+                <br> "So come join us at Venom and let’s explore the world of gaming together!”</br> 
+            </h4>
         </p>
     </div>
 
+<!--Our Team Title-->
+      <h3 style="text-align:center">Our Team</h3>
+
+
+<!--First Row of Team -->
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Jennifer Kim Jin</h2>
+              <p class="title">CEO & Founder</p>
+              <p>The CEO is in charge of the overall management of the 
+                company, while the owner has sole proprietorship of the company.</p>
+                <p class="title"> jennifer.jin@csusb.edu</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Joshua Zhu</h2>
+              <p class="title">Project Manger</p>
+              <p>Identifies the project's goals, objectives,
+                and scope and creates a project plan that outlines the tasks, timelines, and resources required.</p>
+              <p class="title"> 008018342@coyote.csusb.edu</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Anothony Arocha</h2>
+              <p class="title">Assistant Project Manger</p>
+              <p> Manages daily schedules for senior management and other 
+                staff members, including conferences, and other events. </p>
+                <p class="title">006876513@csusb.edu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--Second Row of Team -->
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Marissa Bonilla</h2>
+              <p class="title">Engineer: Front-End</p>
+              <p>Developed the website design, technology and 
+                programming to code a website's appearance, as well as taking care of debugging.</p>
+                <p class="title"> 007483951@coyote.csusb.edu</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <p class="title">
+                <h2>Juan Trujillo</h2>
+                <p class="title">Engineer: Front-End</p>
+              <p>Developed the website design, technology and 
+                programming to code a website's appearance, as well as taking care of debugging.</p>
+                <p class="title"> 008203566@coyote.csusb.edu</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Nathaniel Wallace</h2>
+              <p class="title">Engineer: Back-end</p>
+              <p>Developed the websites databases,
+                 back-end logic, application programming interface (APIs), architecture, and servers.p>
+                 <p class="title"> john@example.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--Third Row of Team -->
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Armando Magallon</h2>
+              <p class="title">Engineer: Back-end</p>
+              <p>SDeveloped the websites databases, back-end logic, 
+                application programming interface (APIs), architecture, and servers.</p>
+                <p class="title"> jane@example.com</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div class="container">
+                <h2>Mario Perez</h2>
+              <p class="title">Engineer: Back-end</p>
+              <p>
+                Developed the websites databases, back-end logic,
+                 application programming interface (APIs), architecture, and servers.
+              </p>
+              <p class="title"> mike@example.com</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>John Doe</h2>
+              <p class="title">Engineer: Back-end</p>
+              <p>
+                Developed the websites databases, back-end logic,
+                 application programming interface (APIs), architecture, and servers.
+              </p>
+              <p class="title"> john@example.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
-
-
-
-
-
-
-
-
+<!-- Footer-->
+<end> <div class="space"></div></end>
+<footer><h6>Course CSE 4550 (01) - SOFTWARE ENGINEERING </h6>
+    <h6>©Copyright 2023</h6></footer>
+    <end> <div class="space2"></div></end>
 
 </body>
 </html>
