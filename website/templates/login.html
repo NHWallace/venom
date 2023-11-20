@@ -6,9 +6,112 @@
     <link rel="stylesheet" href="../static/style.css" />
     <link rel="stylesheet" href="../static/nav.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="../static/login.css" />
+    <link rel="stylesheet" href="../static/Background.css"/>
     <title>Login</title>
   </head>
+
+<style>
+
+
+.login-card {
+    margin-top: 50px;
+    height: 800px;
+    width: 430px; /* Adjust the width as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card-logo {
+    height: 400px; /* Adjust the height as needed */
+    width: 290px; /* Adjust the width as needed */
+    margin-bottom: -70px; /* Adjust as needed */
+}
+
+.login-card-form {
+    width: 100%; /* Make the form take the full width */
+}
+
+.form-item-other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.form-item-other a {
+    margin-top: 10px; /* Adjust as needed */
+    color: rgb(1, 58, 84); /* Adjust the color as needed */
+    text-decoration: none;
+}
+
+.form-item-other a:hover {
+    text-decoration: underline;
+}
+
+.form-item {
+    margin-bottom: 15px;
+}
+
+.form-item-icon {
+    margin-right: 10px;
+}
+
+button {
+    background-color: rgb(141, 236, 236)255, 195);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(0, 204, 255);
+}
+
+h6{
+    color:rgb(255, 255, 255);
+    margin-bottom: -10px;
+}
+
+
+.form-item-other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.form-item-other a {
+    margin-top: 10px; /* Adjust as needed */
+    color: rgb(1, 58, 84); /* Adjust the color as needed */
+    text-decoration: none;
+}
+
+.form-item-other a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    text-align: center;
+}
+
+.both_checkboxes{ text-align: center;}
+.space{ padding: 110px;}
+.space2{ padding: 10px;}
+
+
+
+</style>
+
   <body>
     <header>
       <!-- <img class=".sign-up-card-logo" src="./venom logo.png" alt="logo"/> -->
@@ -32,7 +135,7 @@
         </div>
       </div>
     </header>
-    <p id="top_message">{{ message }}</p>
+    
     <div class="login-card-container">
       <div class="login-card">
         <div class="login-card-logo">
@@ -64,14 +167,7 @@
           </div>
           <div class="form-item-other">
             <div class="both_checkboxes">
-              <div class="checkbox">
-                <input type="checkbox" id="rememberMeCheckbox" />
-                <label for="rememberMeCheckbox">Remember Me</label>
-              </div>
-              <div class="checkbox">
-                <input type="checkbox" id="DevCheckbox" />
-                <label for="rememberMeCheckbox">Devolper</label>
-              </div>
+
             </div>
             <a href="/forgot-password">I forgot my password</a>
           </div>
@@ -82,28 +178,12 @@
           <a href="/sign-up">Create a free account</a>
         </div>
       </div>
-      <div class="login-card-social">
-        <div>Other Sign-in Platform</div>
-        <div class="login-card-social-btn">
-          <a href="#">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-brand-google"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
+
+    <end> <div class="space"></div></end>
+    <footer><h6>Course CSE 4550 (01) - SOFTWARE ENGINEERING </h6>
+        </footer>
+       <footer> <h6>©Copyright 2023</h6></footer>
+        <end> <div class="space2"></div></end>
+    
   </body>
 </html>
