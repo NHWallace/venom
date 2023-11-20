@@ -22,11 +22,16 @@ body{
     
 }
 
+/* Instruction and Comments */
 .game_container{
     height: 200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    margin-left: 700px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 img{
@@ -46,14 +51,19 @@ img{
     display: grid;
     grid-template-columns:  1fr 2fr 1fr;
     grid-template-rows: 150px 150px 150px;
-    
+    margin-left: 230px;
+    margin-top: -300px;
 
 
 }
 
+/* Game Playing */
  .gamePlaying{
-    background-color: pink;
+    background-color: rgb(192, 250, 255);
     grid-area:1/2/4/3 ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 } 
 
 
@@ -67,3 +77,5 @@ img{
 .recent .game #3{
     grid-area:3/4/3/5;
 }
+
+.game{padding: 50px;}

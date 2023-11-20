@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/nav.css" />
+    <link rel="stylesheet" href="../static/Aboutus.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/Background.css" />
+
+    <title>Games</title>
+    <style>
+      
+        .imagebox {
+            display: flex;
+            justify-content: center;
+            /* Center items horizontally */
+            align-items: center;
+            /* Center items vertically */
+            height: 500px;
+            color: rgb(255, 0, 0);
+            font-family: 'Monospace';
+        }
+
+        .container {
+            margin-top: -290px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            
+        }
+
+        .box {
+            width: 700px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: rgba(61, 37, 92, 0.463);
+            border-radius: 10px;
+            color: rgb(34, 255, 0);
+        }
+
+        .boxx {
+            margin-top: 150px;
+        }
+
+        .boxx img {
+            width: 900px;
+            height: 320px;
+        }
+
+        .box img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            /* Adjust the margin as needed */
+        }
+
+        /* large image on left */
+        .left-image {
+            max-width: 900px;
+            height: 300px;
+        }
+        .game_container1 { margin-top: -250px; }
+
+        .game_container, .game_container2,
+        .game_container1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+
+        .game,
+        .game1, .game2 {
+            margin: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+/*Size of Boxes in Games */
+        .card,
+        .card1, .card2 {
+            width: 250px;
+ }
+
+        .card img,
+        .card1 img, .card2 img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1{
+            font-size: 15px;
+            color: rgb(65, 0, 98);
+         
+        }
+
+        /* Space at the end of game */
+        .endgame {
+            margin-bottom: 100px;
+        }
+        .space{  padding: 90px;}
+        .space2{  padding: 10px;}
+        h6{color: aliceblue;}
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar to Right -->
+        <div class="topnav">
+            <img class="topnav_logo" src="../static/venom logo.png" alt="venom logo">
+            <!-- Navigation Links to Pages -->
+            <ul>
+                <li> <a href="/">Home</a> </li>
+                <li> <a class="active" href="/games">Games</a> </li>
+                <li> <a href="/about-us">About us</a> </li>
+            </ul>
+            <!-- Navigation Bar to Left -->
+            <div class="login_signup">
+                <ul>
+                    <li> <a id="sign-up" href="/sign-up">Sign up</a></li>
+                    <li> <a id="login" href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    </div>
+
+    <!-- Top 10 Game Image -->
+    <div class="imagebox">
+        <!-- Link Game -->
+        <a>
+            <div class="boxx">
+                <!-- 10 Top Games Pic -->
+                <img src="../static/Top10Games.jpg" alt="Large Image" class="left-image">
+            </div>
+
+            <br> </br>
+        </a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="container">
+        <div class="box">
+            <!-- Search Bar -->
+            <h2>Search for Game</h2>
+            <form id="searchForm" method="post">
+                <input type="text" name="searchQuery" placeholder="Find a game.." style="height: 40px; font-size: 20px;">
+            </form>
+            <p>"You can search for games, using keyword. Find games recommended for you." </p>
+        </div>
+    </div>
+    </a>
+
+    <!-- First Row Games -->
+    <div class="game_container1">
+        <div class="game1" id="5">
+            <div class="card1">
+                 <!-- Link Game -->
+                <a href="/games/play">
+                <button onclick="window.location.href ='../games/play.html';">
+                    <img src="../static/remnant.jpg">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></p></a>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="game1" id="6">
+            <div class="card1">
+                <!-- Link Game -->
+                <a href="/games/play">
+                <button onclick="window.location.href ='games_play.html';">
+                    <img src="../static/mw3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><a href="/games/play"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="game1" id="7">
+            <div class="card1">
+                <!-- Link Game -->
+                <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/nexus.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p></div>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row Games -->
+    <div class="game_container">
+        <div class="game" id="5">
+            <div class="card">
+                                 <!-- Link Game -->
+                                 <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/borderlands.jpg">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="game" id="6">
+            <div class="card">
+                                 <!-- Link Game -->
+                                 <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/JWorld.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="game" id="7">
+            <div class="card">
+                                 <!-- Link Game -->
+                                 <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/LastofUs.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Last Row of Games -->
+    <div class="game_container2">
+        <div class="game2" id="5">
+            <div class="card2">
+                                 <!-- Link Game -->
+                                 <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/Roblox.jpg">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="game2" id="6">
+            <div class="card2">
+                                 <!-- Link Game -->
+                                 <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/Fortnite.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="game2" id="7">
+            <div class="card2">
+                                 <!-- Link Game -->
+                                 <a href="/games/play">
+                <button onclick="window.location.href ='GamingWindow.html';">
+                    <img src="../static/SuperMario.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><h1>title</h1></a></p>
+                        <p class="card-text">description</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<end> <div class="space"></div></end>
+<footer><h6>Course CSE 4550 (01) - SOFTWARE ENGINEERING </h6>
+    <h6>©Copyright 2023</h6></footer>
+    <end> <div class="space2"></div></end>
+
+</html>
