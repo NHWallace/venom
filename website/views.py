@@ -174,6 +174,24 @@ def games():
             
     return render_template("Games.html")
 
+@views.route('/games/play', methods = ['POST','GET'])
+def play():
+    
+    if request.method == "POST":
+        if request.form.get("searchQuery"):
+        # Submitted form is a search form
+            searchQuery = request.form.get("searchQuery")
+            
+            if searchQuery == "":
+                # User entered a blank form, return them to current page
+                return redirect(request.path)
+            else:
+                redirectURL = "/search/" + searchQuery
+                return redirect(redirectURL)
+            
+    return render_template("Games_play.html")
+
+
 @views.route('/login', methods = ['POST','GET'])
 def login():
     try:

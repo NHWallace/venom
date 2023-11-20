@@ -26,6 +26,7 @@
 
  /* Games Title - Font */
  .hero h1 {
+            margin-top: -200px;
             /* Adjust title */
             font-size: 70px;
             /* Neon Glow Font */
@@ -37,23 +38,65 @@
             text-shadow: 0 0 5px #000000, 0 0 10px #000000,
                 0 0 15px #00BDFF, 0 0 20px #00BDFF,
                 0 0 25px #00BDFF, 0 0 30px #00BDFF, 0 0 35px #000000;
+
         }
 
         /* Play it, love it or Beat it - Font */
         .hero p {
             font-size: 20px;
             margin-top: 0;
-            align-items: center;  
+          
+                         justify-content: center;
+                        align-items: center;
+                         text-align: center;
+        }
+ 
+ /* Comment Box */
+        .container {
+            margin-top: -50px;
+            margin-right: -500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+/* Comment Box Style */
+        .box {
+            width: 600px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: rgba(70, 70, 70, 0.258);
+            border-radius: 10px;
+            color: rgb(0, 213, 255);
         }
 
-     /* Space at the end of game */
+        /* Submit Button Style */
+        .comment-textbox {
+            height: 70px;
+            width: 300px;
+        }
+
+
+ /* Comment Box Title */
+        h3{ color: #00d5ff;
+            font-size: 27px;
+        }
+
+         /* Comment Box Title */
+         h4{ color: #ffffff;}
+
+         /* Comment Box Title */
+         h5{ color: rgb(255, 255, 255);}
+
+
+ /* Space at the end of game */
           .endgame {
             margin-bottom: 100px;
         }
     </style>
 </head>
-
-
 
 <body>
     <header>
@@ -67,15 +110,12 @@
         <li> <a class="active" href="/games">Games</a> </li>
         <li> <a href="/about-us">About us</a> </li>
 
-
-
             <!-- Search Bar -->  
             <li>  <form id="searchForm" method="post">
                     <input type="text" name="searchQuery" placeholder="Find a game..">
                 </form>     
             </li>
     `    </ul>
-
 
 <!-- Navigation Bar to Left -->
            <div class="login_signup">
@@ -91,25 +131,29 @@
     <!-- Title -->
     <div class="hero">
         <!-- Box for Play it, Love it or Beat it -->     
-            <h1>Games</h1>
+            <h1>Play-Game</h1>
             <p>Love it, Play it or Beat it</p>
         </div>
 
-
-
+       
+    
+          <!--Playing Game Box--> 
         <div class="window"> 
             <div class="gamePlaying">
-    
+                 <!-- Add Game Link Here--> 
+                ></a>
             </div>
+
+
             <div class="recent">
                 <div class="game" id="1"> 
-                    <img src="../static/Mario.jpg" alt="mario kart">
+                    <img src="../static/Pokemon.jpg">
                 </div>
                 <div class="game" id="2">
-                    <img src="../static/sonic game.jpg" alt="sonic">
+                    <img src="../static/LastofUs.jpg" >
                 </div>
                 <div class="game" id="3">
-                    <img src="../static/mw3.jpg" alt="mw3">
+                    <img src="../static/Fortnite.jpg">
         
                 </div>
             </div>
@@ -117,50 +161,44 @@
 
 
 
+    <!-- Comments -->
+    <div class="container">
+        <div class="box">
+            
+            <h3>Comments</h3>
 
+            <li>
+            <h4>MattMonkey</h4>
+            <h5>"New game called Voxlblade came out, and i started playing jt. Its pretty fun and the weapon customization seems crazy" </h5>
+            </li>
 
+            <li>
+            <h4>MacdonaldsMarket</h4>
+            <h5>"Survive the end of Roblox is quite fun. It's a old remastered game where you
+                 live in a city and you have to survive different natural disasters until you get saved
+                 by either plane or helicopter. There's also a lot of roleplayers there which makes it really fun to play." </h5>
+            </li>
 
+            <li>
+            <h4>NoCallNoShow01</h4>
+            <h5>"Loomian legacy is a super fun game I really recommend it! Especially if your into Pokémon like games :D" </h5>
+             </li>
 
+             <li>
+                        <!-- Comment pic iron -->
+                        <div class="form-item">
+                            <br></br> 
+                            <textarea class="comment-textbox" placeholder="Enter Message" rows="8" maxlength="300" required></textarea>
+                               <br></br> <button type="submit">Submit</button>
+            </li>
+        </div>
+    </div>
 
-
-
-
-
-
-        <h3>Newest Games</h3>
-        <div>
-            <div class="game_container ">
-                <div class="game" id="5"> 
-                    <img src="../static/mariokart.avif" alt="mario kart">
-                </div>
-                <div class="game" id="6">
-                    <img src="../static/sonic game.jpg" alt="sonic">
-                </div>
-                <div class="game" id="7">
-                    <img src="../static/Game2.png" alt="mw3">
+    </div>
         
-                </div>
    
-            </div>
-            <div class="game_container ">
-                <div class="game" id="5"> 
-                    <img src="../static/PacMan.jpg">
-                </div>
-                <div class="game" id="6">
-                    <img src="../static/m.png">
-                </div>
-                <div class="game" id="7">
-                    <img src="../static/PacMan.jpg" >
-        
+                    
+            
 
-
-
-
-            </div>
-        </div>
-
-
-
-    
 </body>
 </html>
