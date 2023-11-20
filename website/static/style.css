@@ -191,8 +191,9 @@ body {
   z-index: -1;
 }
 
+/*Logo*/
 .sign-up-card-logo img {
-  width: 100px;
+  width: 300px;
 }
 
 .sign-up-card-logo,
@@ -232,6 +233,15 @@ body {
   font-size: 1.3rem;
   opacity: 0.4;
 }
+
+.sign-up-container {
+  height: 990px;
+}
+
+.sign-up-card{
+  height: 990px;;
+}
+
 
 .form-item input[type="text"],
 .sign-up-card input[type="date"],
