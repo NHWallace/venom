@@ -53,7 +53,7 @@
  
  /* Comment Box */
         .container {
-            margin-top: -50px;
+            margin-top: -5px;
             margin-right: -500px;
             display: flex;
             flex-wrap: wrap;
@@ -72,17 +72,33 @@
             color: rgb(0, 213, 255);
         }
 
-        /* Submit Button Style */
-        .comment-textbox {
-            height: 70px;
-            width: 300px;
-        }
+/* Submit Button Style */
+.comment-textbox {
+    height: 70px;
+    width: 400px;
+}
 
+.comment-textbox:hover + button {
+    background-color: #00BDFF;
+    color: #ffffff;
+}
 
- /* Comment Box Title */
+/* Hover effect for the submit button */
+button:hover {
+    background-color: #00BDFF;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+ /* Comment Box 1Title */
         h3{ color: #00d5ff;
             font-size: 27px;
         }
+         /* Comment Box 2Title */
+         .h7{ color: #00d5ff;
+            font-size: 17px;
+        }
+
 
          /* Comment Box Title */
          h4{ color: #ffffff;}
@@ -90,11 +106,14 @@
          /* Comment Box Title */
          h5{ color: rgb(255, 255, 255);}
 
-
  /* Space at the end of game */
           .endgame {
             margin-bottom: 100px;
         }
+        footer{color:#ffffff}
+        .space{ padding: 110px;}
+        .space2{ padding: 10px;}
+
     </style>
 </head>
 
@@ -109,13 +128,7 @@
         <li> <a href="/">Home</a> </li>
         <li> <a class="active" href="/games">Games</a> </li>
         <li> <a href="/about-us">About us</a> </li>
-
-            <!-- Search Bar -->  
-            <li>  <form id="searchForm" method="post">
-                    <input type="text" name="searchQuery" placeholder="Find a game..">
-                </form>     
-            </li>
-    `    </ul>
+  </ul>
 
 <!-- Navigation Bar to Left -->
            <div class="login_signup">
@@ -135,8 +148,6 @@
             <p>Love it, Play it or Beat it</p>
         </div>
 
-       
-    
           <!--Playing Game Box--> 
         <div class="window"> 
             <div class="gamePlaying">
@@ -144,8 +155,8 @@
                 ></a>
             </div>
 
-
             <div class="recent">
+                <h3>Recommendation</h3>
                 <div class="game" id="1"> 
                     <img src="../static/Pokemon.jpg">
                 </div>
@@ -188,6 +199,7 @@
                         <!-- Comment pic iron -->
                         <div class="form-item">
                             <br></br> 
+                            <h7>Enter Comment (Limited 300 Words)</h7>
                             <textarea class="comment-textbox" placeholder="Enter Message" rows="8" maxlength="300" required></textarea>
                                <br></br> <button type="submit">Submit</button>
             </li>
@@ -197,7 +209,10 @@
     </div>
         
    
-                    
+    <end> <div class="space"></div></end>
+<footer><h6>Course CSE 4550 (01) - SOFTWARE ENGINEERING </h6>
+    <h6>©Copyright 2023</h6></footer>
+    <end> <div class="space2"></div></end>                
             
 
 </body>
