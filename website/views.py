@@ -42,19 +42,7 @@ def handle403(e):
 
 @views.route('/', methods = ['POST','GET'])
 def home():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery == "":
-                # user entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
-            
+                
     """
     get the 6 most played games in our database
     ordered queries require indexed database sections, more info at
@@ -75,20 +63,8 @@ def home():
     return render_template("home.html", gameList = mostPlayedList, backupImage = backupImage)
 
 
-@views.route('/about-us', methods = ['POST','GET'])
+@views.route('/about-us', methods = ['GET'])
 def aboutus():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery == "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
     
     return render_template("aboutus.html")
 
@@ -143,18 +119,6 @@ def account():
         return render_template("403.html")
     user_id = session['user']
     username = db.child("users").child(user_id).child("username").get().val()
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery == "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
             
     return render_template("Account.html", username=username)
 
@@ -263,19 +227,7 @@ def login():
 
 @views.route('/logout', methods = ['POST','GET'])
 def logout():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery == "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
-            
+                
     # attempt to delete session information, redirect logged out user to homepage
     try:
         del session['user']
@@ -351,86 +303,26 @@ def sign_up():
   
 @views.route('/profile/picture', methods = ['POST','GET'])
 def picture():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery is "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
-            
+                
     return render_template("account_profile.html")
 
 @views.route('/account/inbox', methods = ['POST','GET'])
 def inbox():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery is "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
-            
+                
     return render_template("account_inbox.html")
 
 @views.route('/account/favgames', methods = ['POST','GET'])
 def favgames():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery is "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
             
     return render_template("account_favgames.html")
 
 @views.route('/account/messages', methods = ['POST','GET'])
 def messages():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery is "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
             
     return render_template("account_messages.html")
 
 @views.route('/account/no_message', methods = ['POST','GET'])
 def no_message():
-    
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery is "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
             
     return render_template("account_no_message.html")
 
@@ -440,17 +332,6 @@ def no_message():
 @views.route('/account/changepas', methods = ['POST','GET'])
 def changepassword():
     
-    if request.method == "POST":
-        if request.form.get("searchQuery"):
-        # Submitted form is a search form
-            searchQuery = request.form.get("searchQuery")
-            
-            if searchQuery is "":
-                # User entered a blank form, return them to current page
-                return redirect(request.path)
-            else:
-                redirectURL = "/search/" + searchQuery
-                return redirect(redirectURL)
             
     return render_template("change_password.html")
 
