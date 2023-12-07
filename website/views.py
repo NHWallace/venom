@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, session, url_for
-from flask import Markup
 
 import pyrebase
 import time
@@ -352,20 +351,16 @@ def forgot_password():
     # Check if this route was passed a message.
     try:
         session['message']
-        print("Forgot was called with the passed message:")
+        print("Forgot-password was called with the passed message:")
         print(session['message'])
         message = session['message']
         del session['message']
     except KeyError:
         print("No message was passed to forgot-password.")
         # Create a default message to display.
-        # HTML does not read newline characters (\n) in passed strings
-        # Flask does not pass tags (such as <br/>) to html files
-        # in order to avoid injection attacks. Markup(string) allows the
-        # insertion of tags.
-        message = Markup("Forgot your password? No problem!<br>")
-        message += Markup("Enter the email you used to create your account<br>")
-        message += Markup("and we will send you a link to reset it.")
+        message = "Forgot your password? No problem! "
+        message += "Enter the email you used to create your account "
+        message += "and we will send you a link to reset it."
     
 
     if request.method == "POST":
@@ -373,9 +368,9 @@ def forgot_password():
         email = request.form['user_email']
         # Email service and password reset handled by firebase
         auth.send_password_reset_email(email)
-        message = Markup("If your email exists in our system,<br>")
-        message += Markup("a password reset email has been sent.<br>")
-        message += Markup("Please check your inbox.")
+        message = "If your email exists in our system, "
+        message += "a password reset email has been sent. "
+        message += "Please check your inbox."
     
             
     return render_template("forgot_password.html", message=message)
