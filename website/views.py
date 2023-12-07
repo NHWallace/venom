@@ -374,3 +374,7 @@ def forgot_password():
     
             
     return render_template("forgot_password.html", message=message)
+
+@views.route('under-construction', methods = ['POST','GET'])
+def under_construction():
+    return render_template("Contruction.html")
