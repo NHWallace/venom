@@ -64,7 +64,7 @@
         {% for game in gameList %}
         <div class = "gameItem">
            <img id="gameImage" src="{{ gameList[game]["imageURL"] }}" alt="{{ game }} image" onerror="this.src = '{{ backupImage }}'">
-           <a id="gameName" href="../games/{{ game }}">{{ game }}</a>
+           <a id="gameName" href="/under-construction">{{ game }}</a>
            <p id="gameDesc">: {{ gameList[game]["description"] }}</p>
         </div>
         {% endfor %}
